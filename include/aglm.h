@@ -3,5 +3,6 @@
 
 #include "vector.h"
 #include "matrix.h"
+#include "shared.h"
 
 #endif // AGLM_AGLM_H
