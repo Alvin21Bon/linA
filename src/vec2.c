@@ -40,7 +40,22 @@ void sumOfVec2(Vec2 outputVector, const size_t numOfOperands, ...)
 
 	va_end(argInfo);
 }
-void differenceOfVec2(Vec2 outputVector, const size_t numOfOperands, ...);
+void differenceOfVec2(Vec2 outputVector, const size_t numOfOperands, ...)
+{
+	int argIndex;
+	va_list argInfo;
+
+	va_start(argInfo, numOfOperands);
+
+	// copy first argument/operand so that subtraction is not applied
+	copyVec2(va_arg(argInfo, Vec2), outputVector); 
+	for (argIndex = 1; argIndex < numOfOperands; argIndex++)
+	{
+		subtractVec2(outputVector, va_arg(argInfo, Vec2), outputVector);
+	}
+
+	va_end(argInfo);
+}
 
 void scaleVec2(const float scalar, const Vec2 inputVector, Vec2 outputVector)
 {
