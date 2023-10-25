@@ -1,6 +1,11 @@
 #include "../include/aglm.h"
 
-void fillVec3(const float x, const float y, const float z, Vec3 outputVector);
+void fillVec3(const float x, const float y, const float z, Vec3 outputVector)
+{
+	outputVector[0] = x;
+	outputVector[1] = y;
+	outputVector[2] = z;
+}
 
 void addVec3(const Vec3 vectorA, const Vec3 vectorB, Vec3 outputVector);
 void subtractVec3(const Vec3 vectorA, const Vec3 vectorB, Vec3 outputVector);
