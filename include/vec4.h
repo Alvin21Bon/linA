@@ -6,6 +6,7 @@
 typedef float Vec4[4];
 
 void fillVec4(const float x, const float y, const float z, const float w, Vec4 outputVector);
+void zeroVec4(Vec4 zeroedVector);
 
 void addVec4(const Vec4 vectorA, const Vec4 vectorB, Vec4 outputVector);
 void subtractVec4(const Vec4 vectorA, const Vec4 vectorB, Vec4 outputVector);

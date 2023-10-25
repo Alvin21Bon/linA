@@ -7,6 +7,7 @@
 typedef float Vec2[2];
 
 void fillVec2(const float x, const float y, Vec2 outputVector);
+void zeroVec2(Vec2 zeroedVector);
 
 void addVec2(const Vec2 vectorA, const Vec2 vectorB, Vec2 outputVector);
 void subtractVec2(const Vec2 vectorA, const Vec2 vectorB, Vec2 outputVector);
