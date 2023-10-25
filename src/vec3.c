@@ -24,7 +24,21 @@ void subtractVec3(const Vec3 vectorA, const Vec3 vectorB, Vec3 outputVector)
 	outputVector[2] = vectorA[2] - vectorB[2];
 }
 
-void sumOfVec3(Vec3 outputVector, const size_t numOfOperands, ...);
+void sumOfVec3(Vec3 outputVector, const size_t numOfOperands, ...)
+{
+	int argIndex;
+	va_list argInfo;
+
+	va_start(argInfo, numOfOperands);
+
+	zeroVec3(outputVector);
+	for (argIndex = 0; argIndex < numOfOperands; argIndex++)
+	{
+		addVec3(outputVector, va_arg(argInfo, Vec3), outputVector);
+	}
+
+	va_end(argInfo);
+}
 void differenceOfVec3(Vec3 outputVector, const size_t numOfOperands, ...);
 
 void scaleVec3(const float scalar, const Vec3 inputVector, Vec3 outputVector)
