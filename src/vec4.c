@@ -8,5 +8,5 @@ void subtractVec4(const Vec4 vectorA, const Vec4 vectorB, Vec4 outputVector);
 void sumOfVec4(Vec4 outputVector, const size_t numOfOperands, ...);
 void differenceOfVec4(Vec4 outputVector, const size_t numOfOperands, ...);
 
-void scaleVec4(const float scalar, const Vec4 inputVector, Vec4 ouputVector);
+void scaleVec4(const float scalar, const Vec4 inputVector, Vec4 outputVector);
 void negVec4(const Vec4 inputVector, Vec4 outputVector);
