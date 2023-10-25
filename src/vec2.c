@@ -5,6 +5,7 @@ void fillVec2(const float x, const float y, Vec2 outputVector)
 	outputVector[0] = x;
 	outputVector[1] = y;
 }
+void zeroVec2(Vec2 zeroedVector);
 
 void addVec2(const Vec2 vectorA, const Vec2 vectorB, Vec2 outputVector)
 {
