@@ -11,6 +11,10 @@ void zeroVec4(Vec4 zeroedVector)
 {
 	fillVec4(0, 0, 0, 0, zeroedVector);
 }
+void copyVec4(const Vec4 inputVector, Vec4 copyIntoVector)
+{
+	fillVec4(inputVector[0], inputVector[1], inputVector[2], inputVector[3], copyIntoVector);
+}
 
 void addVec4(const Vec4 vectorA, const Vec4 vectorB, Vec4 outputVector)
 {

@@ -10,6 +10,10 @@ void zeroVec3(Vec3 zeroedVector)
 {
 	fillVec3(0, 0, 0, zeroedVector);
 }
+void copyVec3(const Vec3 inputVector, Vec3 copyIntoVector)
+{
+	fillVec3(inputVector[0], inputVector[1], inputVector[2], copyIntoVector);
+}
 
 void addVec3(const Vec3 vectorA, const Vec3 vectorB, Vec3 outputVector)
 {
