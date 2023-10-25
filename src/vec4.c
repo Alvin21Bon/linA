@@ -7,7 +7,10 @@ void fillVec4(const float x, const float y, const float z, const float w, Vec4 o
 	outputVector[2] = z;
 	outputVector[3] = w;
 }
-void zeroVec4(Vec4 zeroedVector);
+void zeroVec4(Vec4 zeroedVector)
+{
+	fillVec4(0, 0, 0, 0, zeroedVector);
+}
 
 void addVec4(const Vec4 vectorA, const Vec4 vectorB, Vec4 outputVector)
 {
