@@ -25,5 +25,8 @@ void scaleVec2(const float scalar, const Vec2 inputVector, Vec2 outputVector)
 	outputVector[0] = scalar * inputVector[0];
 	outputVector[1] = scalar * inputVector[1];
 }
-void negVec2(const Vec2 inputVector, Vec2 outputVector);
+void negVec2(const Vec2 inputVector, Vec2 outputVector)
+{
+	scaleVec2(-1, inputVector, outputVector);
+}
 
