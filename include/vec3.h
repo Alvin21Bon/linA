@@ -2,7 +2,6 @@
 #define AGLM_VEC3_H
 
 #include "shared.h"
-#include "vec4.h" // for the implementation of the sumOfVec function
 
 typedef float Vec3[3];
 
