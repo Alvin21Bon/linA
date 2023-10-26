@@ -20,7 +20,7 @@ void subtractVec3(const Vec3 vectorA, const Vec3 vectorB, Vec3 outputVector);
 void sumOfVec3(Vec3 outputVector, const size_t numOfOperands, ...);
 void differenceOfVec3(Vec3 outputVector, const size_t numOfOperands, ...);
 
-void scaleVec3(const float scalar, const Vec3 inputVector, Vec3 outputVector);
-void negVec3(const Vec3 inputVector, Vec3 outputVector);
+void scaleVec3(const float scalar, Vec3 scaledVector);
+void negVec3(Vec3 negatedVector);
 
 #endif // AGLM_VEC3_H

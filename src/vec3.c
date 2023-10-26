@@ -60,14 +60,14 @@ void differenceOfVec3(Vec3 outputVector, const size_t numOfOperands, ...)
 	va_end(argInfo);
 }
 
-void scaleVec3(const float scalar, const Vec3 inputVector, Vec3 outputVector)
+void scaleVec3(const float scalar, Vec3 scaledVector)
 {
-	outputVector[0] = scalar * inputVector[0];
-	outputVector[1] = scalar * inputVector[1];
-	outputVector[2] = scalar * inputVector[2];
+	scaledVector[0] = scalar * scaledVector[0];
+	scaledVector[1] = scalar * scaledVector[1];
+	scaledVector[2] = scalar * scaledVector[2];
 }
-void negVec3(const Vec3 inputVector, Vec3 outputVector)
+void negVec3(Vec3 negatedVector)
 {
-	scaleVec3(-1, inputVector, outputVector);
+	scaleVec3(-1, negatedVector);
 }
 

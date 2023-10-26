@@ -63,14 +63,15 @@ void differenceOfVec4(Vec4 outputVector, const size_t numOfOperands, ...)
 	va_end(argInfo);
 }
 
-void scaleVec4(const float scalar, const Vec4 inputVector, Vec4 outputVector)
+void scaleVec4(const float scalar, Vec4 scaledVector)
 {
-	outputVector[0] = scalar * inputVector[0];
-	outputVector[1] = scalar * inputVector[1];
-	outputVector[2] = scalar * inputVector[2];
-	outputVector[3] = scalar * inputVector[3];
+	scaledVector[0] = scalar * scaledVector[0];
+	scaledVector[1] = scalar * scaledVector[1];
+	scaledVector[2] = scalar * scaledVector[2];
+	scaledVector[3] = scalar * scaledVector[3];
 }
-void negVec4(const Vec4 inputVector, Vec4 outputVector)
+void negVec4(Vec4 negatedVector)
 {
-	scaleVec4(-1, inputVector, outputVector);
+	scaleVec4(-1, negatedVector);
 }
+
