@@ -48,7 +48,7 @@ void differenceOfVec2(Vec2 outputVector, const size_t numOfOperands, ...)
 	va_start(argInfo, numOfOperands);
 
 	// copy first argument/operand so that subtraction is not applied
-	copyVec2(va_arg(argInfo, Vec2), outputVector); 
+	copyVec2(va_arg(argInfo, float*), outputVector); 
 	for (argIndex = 1; argIndex < numOfOperands; argIndex++)
 	{
 		subtractVec2(outputVector, va_arg(argInfo, float*), outputVector);
