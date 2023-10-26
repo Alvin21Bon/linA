@@ -35,7 +35,7 @@ void sumOfVec2(Vec2 outputVector, const size_t numOfOperands, ...)
 	zeroVec2(outputVector);
 	for (argIndex = 0; argIndex < numOfOperands; argIndex++)
 	{
-		addVec2(outputVector, va_arg(argInfo, Vec2), outputVector);
+		addVec2(outputVector, va_arg(argInfo, float*), outputVector);
 	}
 
 	va_end(argInfo);
@@ -51,7 +51,7 @@ void differenceOfVec2(Vec2 outputVector, const size_t numOfOperands, ...)
 	copyVec2(va_arg(argInfo, Vec2), outputVector); 
 	for (argIndex = 1; argIndex < numOfOperands; argIndex++)
 	{
-		subtractVec2(outputVector, va_arg(argInfo, Vec2), outputVector);
+		subtractVec2(outputVector, va_arg(argInfo, float*), outputVector);
 	}
 
 	va_end(argInfo);
