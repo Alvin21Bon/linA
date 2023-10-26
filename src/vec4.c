@@ -35,32 +35,38 @@ void sumOfVec4(Vec4 outputVector, const size_t numOfOperands, ...)
 {
 	int argIndex;
 	va_list argInfo;
+	Vec4 tempOutputVector; // to support outputVector being one of the operands
 
 	va_start(argInfo, numOfOperands);
 
-	zeroVec4(outputVector);
+	zeroVec4(tempOutputVector);
 	for (argIndex = 0; argIndex < numOfOperands; argIndex++)
 	{
-		addVec4(outputVector, va_arg(argInfo, float*), outputVector);
+		addVec4(tempOutputVector, va_arg(argInfo, float*), tempOutputVector);
 	}
 
 	va_end(argInfo);
+
+	copyVec4(tempOutputVector, outputVector);
 }
 void differenceOfVec4(Vec4 outputVector, const size_t numOfOperands, ...)
 {
 	int argIndex;
 	va_list argInfo;
+	Vec4 tempOutputVector; // to support outputVector being one of the operands
 
 	va_start(argInfo, numOfOperands);
 
 	// copy first argument/operand so that subtraction is not applied
-	copyVec4(va_arg(argInfo, float*), outputVector); 
+	copyVec4(va_arg(argInfo, float*), tempOutputVector); 
 	for (argIndex = 1; argIndex < numOfOperands; argIndex++)
 	{
-		subtractVec4(outputVector, va_arg(argInfo, float*), outputVector);
+		subtractVec4(tempOutputVector, va_arg(argInfo, float*), tempOutputVector);
 	}
 
 	va_end(argInfo);
+
+	copyVec4(tempOutputVector, outputVector);
 }
 
 void scaleVec4(const float scalar, Vec4 scaledVector)
