@@ -1,7 +1,7 @@
 # === BEGIN DECLARING VARIABLES FOR USE IN MAKEFILE
 # COMPILER
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -c 
+CFLAGS = -Wall -Werror -c 
 
 # DIRECTORIES
 RELEASE_DIR = build/release
@@ -20,7 +20,7 @@ ARCHIVE_FLAGS = rc
 
 INDEXER = ranlib
 
-LIBRARY_NAME = libaglm.a
+LIBRARY_NAME = $(BUILD_DIR)/libaglm.a
 # === END DECLARING VARIABLES FOR USE IN MAKEFILE
 
 # === BEGIN DEFAULT BUILD
@@ -34,13 +34,12 @@ debug: all
 # === END DEBUG TARGET
 
 # === BEGIN MAIN LIBRARY TARGET
-$(LIBRARY_NAME): $(OBJECTS_DIR)
-
 $(LIBRARY_NAME): $(OBJ_FILES)
-	@echo $(OBJ_FILES)
+	$(ARCHIVER) $(ARCHIVE_FLAGS) $(LIBRARY_NAME) $(OBJ_FILES)
+	$(INDEXER) $(LIBRARY_NAME)
 
-$(OBJECTS_DIR)/%.o:
-	@echo whatever
+$(OBJECTS_DIR)/%.o: src/%.c include/%.h $(OBJECTS_DIR)
+	$(CC) $(CFLAGS) $< -o $@
 
 $(OBJECTS_DIR):
 	@mkdir -p $(OBJECTS_DIR)
