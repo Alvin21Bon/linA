@@ -11,9 +11,8 @@ OBJECTS_DIR = objects
 BUILD_DIR = $(RELEASE_DIR)
 
 # SRC AND OBJ FILES
-SRC_FILE_FULL_NAMES = $(wildcard src/*.c)
-SRC_FILE_NAMES = $(subst src/,,$(SRC_FILE_FULL_NAMES))
-OBJ_FILE_NAMES = $(subst .c,.o,$(SRC_FILE_NAMES))
+SRC_FILES = $(wildcard src/*.c)
+OBJ_FILES = $(patsubst src/%.c,$(BUILD_DIR)/$(OBJECTS_DIR)/%.o,$(SRC_FILES))
 
 # ARCHIVING
 ARCHIVER = ar
@@ -37,8 +36,8 @@ debug: all
 # === BEGIN MAIN LIBRARY TARGET
 $(LIBRARY_NAME): $(BUILD_DIR)/$(OBJECTS_DIR)
 
-$(LIBRARY_NAME): $(BUILD_DIR)/$(OBJECTS_DIR)/%.o
-	@echo $(OBJ_FILE_NAMES)
+$(LIBRARY_NAME): $(OBJ_FILES)
+	@echo $(OBJ_FILES)
 
 $(BUILD_DIR)/$(OBJECTS_DIR)/%.o:
 	@echo whatever
