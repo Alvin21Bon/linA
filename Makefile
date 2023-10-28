@@ -1,7 +1,7 @@
 # === BEGIN DECLARING VARIABLES FOR USE IN MAKEFILE
 # COMPILER
 CC := gcc
-CFLAGS := -Wall -Werror -c 
+CFLAGS := -Wall -Werror -c
 DEBUG_FLAGS = -g
 
 # DIRECTORIES
@@ -34,14 +34,12 @@ DEBUG_LIBRARY := $(DEBUG_DIR)/$(LIBRARY_NAME)
 # === END DECLARING VARIABLES FOR USE IN MAKEFILE
 
 # === BEGIN PHONY TARGETS
-.phony: all debug release clean
-
-all: release
-
-debug: CFLAGS := $(CFLAGS) + $(DEBUG_FLAGS)
-debug: $(DEBUG_LIBRARY)
+.phony: release debug clean
 
 release: $(RELEASE_LIBRARY)
+
+debug: CFLAGS := $(CFLAGS) $(DEBUG_FLAGS)
+debug: $(DEBUG_LIBRARY)
 
 clean:
 	rm -rf build
@@ -61,7 +59,7 @@ $(DEBUG_LIBRARY): $(DEBUG_OBJ_FILES)
 $(RELEASE_OBJECTS_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/*.h | $(RELEASE_OBJECTS_DIR)
 	$(CC) $(CFLAGS) $< -o $@
 
-$(DEBUG_OBJECTS_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/%.h | $(DEBUG_OBJECTS_DIR)
+$(DEBUG_OBJECTS_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/*.h | $(DEBUG_OBJECTS_DIR)
 	$(CC) $(CFLAGS) $< -o $@
 # === END OBJECT FILE TARGETS
 
