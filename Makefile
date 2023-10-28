@@ -1,13 +1,21 @@
 # === BEGIN DECLARING VARIABLES FOR USE IN MAKEFILE
+# COMPILER
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -c 
 
+# DIRECTORIES
 RELEASE_DIR = build/release
 DEBUG_DIR = build/debug
 OBJECTS_DIR = objects
 # set to release by default, changed in "debug" target
 BUILD_DIR = $(RELEASE_DIR)
 
+# SRC AND OBJ FILES
+SRC_FILE_FULL_NAMES = $(wildcard src/*.c)
+SRC_FILE_NAMES = $(subst src/,,$(SRC_FILE_FULL_NAMES))
+OBJ_FILE_NAMES = $(subst .c,.o,$(SRC_FILE_NAMES))
+
+# ARCHIVING
 ARCHIVER = ar
 ARCHIVE_FLAGS = rc
 
@@ -30,7 +38,7 @@ debug: all
 $(LIBRARY_NAME): $(BUILD_DIR)/$(OBJECTS_DIR)
 
 $(LIBRARY_NAME): $(BUILD_DIR)/$(OBJECTS_DIR)/%.o
-	@echo hi
+	@echo $(OBJ_FILE_NAMES)
 
 $(BUILD_DIR)/$(OBJECTS_DIR)/%.o:
 	@echo whatever
