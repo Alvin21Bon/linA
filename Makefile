@@ -42,7 +42,7 @@ debug: CFLAGS := $(CFLAGS) $(DEBUG_FLAGS)
 debug: $(DEBUG_LIBRARY)
 
 clean:
-	rm -rf build
+	@rm -rf build
 # === END PHONY TARGETS
 
 # === BEGIN LIBRARY TARGETS
