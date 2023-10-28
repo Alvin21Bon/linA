@@ -6,13 +6,13 @@ CFLAGS = -Wall -Wextra -Werror -c
 # DIRECTORIES
 RELEASE_DIR = build/release
 DEBUG_DIR = build/debug
-OBJECTS_DIR = objects
+OBJECTS_DIR = $(BUILD_DIR)/objects
 # set to release by default, changed in "debug" target
 BUILD_DIR = $(RELEASE_DIR)
 
 # SRC AND OBJ FILES
 SRC_FILES = $(wildcard src/*.c)
-OBJ_FILES = $(patsubst src/%.c,$(BUILD_DIR)/$(OBJECTS_DIR)/%.o,$(SRC_FILES))
+OBJ_FILES = $(patsubst src/%.c,$(OBJECTS_DIR)/%.o,$(SRC_FILES))
 
 # ARCHIVING
 ARCHIVER = ar
@@ -34,13 +34,13 @@ debug: all
 # === END DEBUG TARGET
 
 # === BEGIN MAIN LIBRARY TARGET
-$(LIBRARY_NAME): $(BUILD_DIR)/$(OBJECTS_DIR)
+$(LIBRARY_NAME): $(OBJECTS_DIR)
 
 $(LIBRARY_NAME): $(OBJ_FILES)
 	@echo $(OBJ_FILES)
 
-$(BUILD_DIR)/$(OBJECTS_DIR)/%.o:
+$(OBJECTS_DIR)/%.o:
 	@echo whatever
 
-$(BUILD_DIR)/$(OBJECTS_DIR):
-	@mkdir -p $(BUILD_DIR)/$(OBJECTS_DIR)
+$(OBJECTS_DIR):
+	@mkdir -p $(OBJECTS_DIR)
