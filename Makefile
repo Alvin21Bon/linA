@@ -39,7 +39,7 @@ $(LIBRARY_NAME): $(OBJ_FILES)
 	$(INDEXER) $(LIBRARY_NAME)
 
 $(OBJECTS_DIR)/%.o: src/%.c include/%.h | $(OBJECTS_DIR)
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $< -o $(OBJECTS_DIR)/$(@F)
 
 $(OBJECTS_DIR):
 	@mkdir -p $(OBJECTS_DIR)
