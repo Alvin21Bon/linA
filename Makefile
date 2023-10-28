@@ -1,65 +1,87 @@
 # === BEGIN DECLARING VARIABLES FOR USE IN MAKEFILE
 # COMPILER
-CC = gcc
-CFLAGS = -Wall -Werror -c 
+CC := gcc
+CFLAGS := -Wall -Werror -c 
+DEBUG_FLAGS = -g
 
 # DIRECTORIES
-RELEASE_DIR = build/release
-DEBUG_DIR = build/debug
-OBJECTS_DIR = $(BUILD_DIR)/objects
-# set to release by default, changed in "debug" target
-BUILD_DIR = $(RELEASE_DIR)
+RELEASE_DIR := build/release
+DEBUG_DIR := build/debug
+OBJECTS_DIR := objects
+
+RELEASE_OBJECTS_DIR := $(RELEASE_DIR)/$(OBJECTS_DIR)
+DEBUG_OBJECTS_DIR := $(DEBUG_DIR)/$(OBJECTS_DIR)
+
+SRC_DIR := src
+INCLUDE_DIR := include
 
 # SRC AND OBJ FILES
-SRC_FILES = $(wildcard src/*.c)
-RELEASE_OBJ_FILES = $(patsubst src/%.c,$(RELEASE_DIR)/objects/%.o,$(SRC_FILES))
-DEBUG_OBJ_FILES = $(patsubst src/%.c,$(DEBUG_DIR)/objects/%.o,$(SRC_FILES))
+SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
+
+RELEASE_OBJ_FILES := $(patsubst $(SRC_DIR)/%.c,$(RELEASE_OBJECTS_DIR)/%.o,$(SRC_FILES))
+DEBUG_OBJ_FILES := $(patsubst $(SRC_DIR)/%.c,$(DEBUG_OBJECTS_DIR)/%.o,$(SRC_FILES))
 
 # ARCHIVING
-ARCHIVER = ar
-ARCHIVE_FLAGS = rc
+ARCHIVER := ar
+ARCHIVER_FLAGS := rc
 
-INDEXER = ranlib
+INDEXER := ranlib
 
-LIBRARY_NAME = libaglm.a
+LIBRARY_NAME := libaglm.a
+
+RELEASE_LIBRARY := $(RELEASE_DIR)/$(LIBRARY_NAME)
+DEBUG_LIBRARY := $(DEBUG_DIR)/$(LIBRARY_NAME)
 # === END DECLARING VARIABLES FOR USE IN MAKEFILE
 
-.phony: all debug release
+# === BEGIN PHONY TARGETS
+.phony: all debug release clean
 
 all: release
 
-debug: CFLAGS += -g
-debug: $(DEBUG_DIR)/$(LIBRARY_NAME) 
+debug: CFLAGS := $(CFLAGS) + $(DEBUG_FLAGS)
+debug: $(DEBUG_LIBRARY)
 
-release: $(RELEASE_DIR)/$(LIBRARY_NAME)
-
-$(RELEASE_DIR)/$(LIBRARY_NAME): $(RELEASE_OBJ_FILES)
-	$(ARCHIVER) $(ARCHIVE_FLAGS) $@ $?
-	$(INDEXER) $@
-
-$(RELEASE_DIR)/objects/%.o: src/%.c include/%.h | $(RELEASE_DIR)/objects
-	$(CC) $(CFLAGS) $< -o $@
-
-$(RELEASE_DIR)/objects:
-	@mkdir -p $(RELEASE_DIR)/objects 
-
-#
-#
-#
-
-$(DEBUG_DIR)/$(LIBRARY_NAME): $(DEBUG_OBJ_FILES)
-	$(ARCHIVER) $(ARCHIVE_FLAGS) $@ $?
-	$(INDEXER) $@
-
-$(DEBUG_DIR)/objects/%.o: src/%.c include/%.h | $(DEBUG_DIR)/objects
-	$(CC) $(CFLAGS) $< -o $@
-
-$(DEBUG_DIR)/objects:
-	@mkdir -p $(DEBUG_DIR)/objects
+release: $(RELEASE_LIBRARY)
 
 clean:
 	rm -rf build
+# === END PHONY TARGETS
 
+# === BEGIN LIBRARY TARGETS
+$(RELEASE_LIBRARY): $(RELEASE_OBJ_FILES)
+	$(ARCHIVER) $(ARCHIVER_FLAGS) $@ $?
+	$(INDEXER) $@
+
+$(DEBUG_LIBRARY): $(DEBUG_OBJ_FILES)
+	$(ARCHIVER) $(ARCHIVER_FLAGS) $@ $?
+	$(INDEXER) $@
+# === END LIBRARY TARGETS
+
+# === BEGIN OBJECT FILE TARGETS
+$(RELEASE_OBJECTS_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/*.h | $(RELEASE_OBJECTS_DIR)
+	$(CC) $(CFLAGS) $< -o $@
+
+$(DEBUG_OBJECTS_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/%.h | $(DEBUG_OBJECTS_DIR)
+	$(CC) $(CFLAGS) $< -o $@
+# === END OBJECT FILE TARGETS
+
+# === BEGIN DIRECTORY TARGETS
+$(RELEASE_OBJECTS_DIR):
+	@mkdir -p $(RELEASE_OBJECTS_DIR)
+
+$(DEBUG_OBJECTS_DIR):
+	@mkdir -p $(DEBUG_OBJECTS_DIR)
+# === END DIRECTORY TARGETS
+
+
+
+# ===
+# NOTE: COMMENTED OUT LINES ARE FROM A FAILED IMPLEMENTATION AND ARE SAVED FOR
+# 	A LATER REFACTOR
+# ===
+
+# BUILD_DIR = $(RELEASE_DIR)
+#
 # # === BEGIN DEFAULT BUILD
 # all: $(LIBRARY_NAME)
 # # === END DEFAULT BUILD
