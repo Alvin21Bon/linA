@@ -23,9 +23,9 @@ all: $(LIBRARY_NAME)
 debug: CFLAGS += -g
 debug: BUILD_DIR = $(DEBUG_DIR)
 
-debug: $(DEBUG_DIR)
-$(DEBUG_DIR):
-	mkdir -p $(DEBUG_DIR)
+debug: $(DEBUG_DIR)/$(OBJECTS_DIR)
+$(DEBUG_DIR)/$(OBJECTS_DIR):
+	@mkdir -p $(DEBUG_DIR)/$(OBJECTS_DIR)
 
 debug: all
 # === END DEBUG TARGET
