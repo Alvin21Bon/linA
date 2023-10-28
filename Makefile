@@ -38,7 +38,7 @@ $(LIBRARY_NAME): $(OBJ_FILES)
 	$(ARCHIVER) $(ARCHIVE_FLAGS) $(LIBRARY_NAME) $(OBJ_FILES)
 	$(INDEXER) $(LIBRARY_NAME)
 
-$(OBJECTS_DIR)/%.o: src/%.c include/%.h $(OBJECTS_DIR)
+$(OBJECTS_DIR)/%.o: src/%.c include/%.h | $(OBJECTS_DIR)
 	$(CC) $(CFLAGS) $< -o $@
 
 $(OBJECTS_DIR):
