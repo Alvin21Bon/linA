@@ -30,4 +30,6 @@ void productOfMat3Vecs(const Mat3 transformedSpace, const size_t numOfVectors, .
 
 void multMat3Mat(const Mat3 transformedSpace, Mat3 transformedMatrix);
 
+void printMat3(const Mat3 matrixToPrint);
+
 #endif // AGLM_MAT3_H

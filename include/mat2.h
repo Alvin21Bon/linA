@@ -29,4 +29,6 @@ void productOfMat2Vecs(const Mat2 transformedSpace, const size_t numOfVectors, .
 
 void multMat2Mat(const Mat2 transformedSpace, Mat2 transformedMatrix);
 
+void printMat2(const Mat2 matrixToPrint);
+
 #endif // AGLM_MAT2_H

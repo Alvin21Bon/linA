@@ -31,4 +31,6 @@ void productOfMat4Vecs(const Mat4 transformedSpace, const size_t numOfVectors, .
 
 void multMat4Mat(const Mat4 transformedSpace, Mat4 transformedMatrix);
 
+void printMat4(const Mat4 matrixToPrint);
+
 #endif // AGLM_MAT4_H
