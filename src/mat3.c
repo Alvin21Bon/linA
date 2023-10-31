@@ -1,10 +1,10 @@
 #include "../include/aglm.h"
 
-void fillMat3(const Vec3 column1, const Vec3 column2, const Vec3 column3, Mat3 outputMatrix);
+void fillMat3(const Vec3 column0, const Vec3 column1, const Vec3 column2, Mat3 outputMatrix);
 
-void fillMat3WithFloats(const float col1row1, const float col2row1, const float col3row1, 
-			const float col1row2, const float col2row2, const float col3row2,
-			const float col1row3, const float col2row3, const float col3row3,
+void fillMat3WithFloats(const float col0row0, const float col1row0, const float col2row0, 
+			const float col0row1, const float col1row1, const float col2row1,
+			const float col0row2, const float col1row2, const float col2row2,
 			Mat3 outputMatrix);
 
 void zeroMat3(Mat3 zeroedMatrix);

@@ -6,13 +6,13 @@
 
 typedef Vec4 Mat4[4];
 
-void fillMat4(const Vec4 column1, const Vec4 column2, const Vec4 column3, const Vec4 column4, Mat4 outputMatrix);
+void fillMat4(const Vec4 column0, const Vec4 column1, const Vec4 column2, const Vec4 column3, Mat4 outputMatrix);
 
 // Arguments are in ROW-MAJOR order. Remember to transpose resulting matrix.
-void fillMat4WithFloats(const float col1row1, const float col2row1, const float col3row1, const float col4row1, 
-			const float col1row2, const float col2row2, const float col3row2, const float col4row2,
-			const float col1row3, const float col2row3, const float col3row3, const float col4row3,
-			const float col1row4, const float col2row4, const float col3row4, const float col4row4,
+void fillMat4WithFloats(const float col0row0, const float col1row0, const float col2row0, const float col3row0, 
+			const float col0row1, const float col1row1, const float col2row1, const float col3row1,
+			const float col0row2, const float col1row2, const float col2row2, const float col3row2,
+			const float col0row3, const float col1row3, const float col2row3, const float col3row3,
 			Mat4 outputMatrix);
 
 void zeroMat4(Mat4 zeroedMatrix);

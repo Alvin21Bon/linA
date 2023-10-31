@@ -6,11 +6,11 @@
 
 typedef Vec2 Mat2[2];
 
-void fillMat2(const Vec2 column1, const Vec2 column2, Mat2 outputMatrix);
+void fillMat2(const Vec2 column0, const Vec2 column1, Mat2 outputMatrix);
 
 // Arguments are in ROW-MAJOR order. Remember to transpose resulting matrix.
-void fillMat2WithFloats(const float col1row1, const float col2row1, 
-			const float col1row2, const float col2row2,
+void fillMat2WithFloats(const float col0row0, const float col1row0, 
+			const float col0row1, const float col1row1,
 			Mat2 outputMatrix);
 
 void zeroMat2(Mat2 zeroedMatrix);
