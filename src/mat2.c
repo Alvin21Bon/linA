@@ -17,12 +17,36 @@ void fillMat2WithFloats(const float col0row0, const float col1row0,
 	fillMat2(column0, column1, outputMatrix);
 }
 
-void zeroMat2(Mat2 zeroedMatrix);
-void copyMat2(const Mat2 inputMatrix, Mat2 copyIntoMatrix);
-void fillIdentityMat2(Mat2 outputMatrix);
-void transposeMat2(Mat2 transposedMatrix);
+void zeroMat2(Mat2 zeroedMatrix)
+{
+	int numOfElementsInMat2 = 4;
 
-void multMat2Vec(const Mat2 transformedSpace, Vec2 transformedVector);
+	memset(zeroedMatrix, 0, sizeof(float) * numOfElementsInMat2);
+}
+void copyMat2(const Mat2 inputMatrix, Mat2 copyIntoMatrix)
+{
+	fillMat2(inputMatrix[0], inputMatrix[1], copyIntoMatrix);
+}
+void fillIdentityMat2(Mat2 outputMatrix)
+{
+	zeroMat2(outputMatrix);
+	outputMatrix[0][0] = 1;
+	outputMatrix[1][1] = 1;
+}
+void transposeMat2(Mat2 transposedMatrix)
+{
+	fillMat2WithFloats(transposedMatrix[0][0], transposedMatrix[0][1], 
+			   transposedMatrix[1][0], transposedMatrix[1][1],
+			   transposedMatrix);
+}
+
+void multMat2Vec(const Mat2 transformedSpace, Vec2 transformedVector)
+{
+	// NOTE: might need to add a for loop here for better readability or adaptability
+
+	Mat2 tempCopyOfMatrix;
+	copyMat2(transformedSpace, tempCopyOfMatrix);
+}
 
 void productOfMat2Vecs(const Mat2 transformedSpace, const size_t numOfVectors, ...);
 
