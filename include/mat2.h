@@ -4,6 +4,10 @@
 #include "shared.h"
 #include "vec2.h"
 
+#define MAT2_NUM_OF_COLUMNS 2
+#define MAT2_NUM_OF_ROWS 2
+#define MAT2_NUM_OF_ELEMENTS (MAT2_NUM_OF_COLUMNS * MAT2_NUM_OF_ROWS) 
+
 typedef Vec2 Mat2[2];
 
 void fillMat2(const Vec2 column0, const Vec2 column1, Mat2 outputMatrix);

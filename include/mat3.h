@@ -4,6 +4,10 @@
 #include "shared.h"
 #include "vec3.h"
 
+#define MAT3_NUM_OF_COLUMNS 3
+#define MAT3_NUM_OF_ROWS 3
+#define MAT3_NUM_OF_ELEMENTS (MAT3_NUM_OF_COLUMNS * MAT3_NUM_OF_ROWS) 
+
 typedef Vec3 Mat3[3];
 
 void fillMat3(const Vec3 column0, const Vec3 column1, const Vec3 column2, Mat3 outputMatrix);

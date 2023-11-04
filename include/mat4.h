@@ -4,6 +4,10 @@
 #include "shared.h"
 #include "vec4.h"
 
+#define MAT4_NUM_OF_COLUMNS 4
+#define MAT4_NUM_OF_ROWS 4
+#define MAT4_NUM_OF_ELEMENTS (MAT4_NUM_OF_COLUMNS * MAT4_NUM_OF_ROWS) 
+
 typedef Vec4 Mat4[4];
 
 void fillMat4(const Vec4 column0, const Vec4 column1, const Vec4 column2, const Vec4 column3, Mat4 outputMatrix);
