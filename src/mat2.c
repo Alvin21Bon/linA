@@ -19,9 +19,7 @@ void fillMat2WithFloats(const float col0row0, const float col1row0,
 
 void zeroMat2(Mat2 zeroedMatrix)
 {
-	int numOfElementsInMat2 = 4;
-
-	memset(zeroedMatrix, 0, sizeof(float) * numOfElementsInMat2);
+	memset(zeroedMatrix, 0, sizeof(float) * MAT2_NUM_OF_ELEMENTS);
 }
 void copyMat2(const Mat2 inputMatrix, Mat2 copyIntoMatrix)
 {
@@ -30,8 +28,12 @@ void copyMat2(const Mat2 inputMatrix, Mat2 copyIntoMatrix)
 void fillIdentityMat2(Mat2 outputMatrix)
 {
 	zeroMat2(outputMatrix);
-	outputMatrix[0][0] = 1;
-	outputMatrix[1][1] = 1;
+
+	for (int diagonalPos = 0; diagonalPos < MAT2_NUM_OF_COLUMNS && diagonalPos < MAT2_NUM_OF_ROWS; diagonalPos++)
+	{
+		outputMatrix[diagonalPos][diagonalPos] = 1;
+		outputMatrix[diagonalPos][diagonalPos] = 1;
+	}
 }
 void transposeMat2(Mat2 transposedMatrix)
 {
