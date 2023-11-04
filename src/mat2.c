@@ -32,7 +32,6 @@ void fillIdentityMat2(Mat2 outputMatrix)
 	for (int diagonalPos = 0; diagonalPos < MAT2_NUM_OF_COLUMNS && diagonalPos < MAT2_NUM_OF_ROWS; diagonalPos++)
 	{
 		outputMatrix[diagonalPos][diagonalPos] = 1;
-		outputMatrix[diagonalPos][diagonalPos] = 1;
 	}
 }
 void transposeMat2(Mat2 transposedMatrix)
