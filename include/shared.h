@@ -4,5 +4,6 @@
 #include <stddef.h>
 #include <stdarg.h>
 #include <string.h>
+#include <stdio.h>
 
 #endif // AGLM_SHARED_H
