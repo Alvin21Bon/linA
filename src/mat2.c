@@ -44,15 +44,36 @@ void transposeMat2(Mat2 transposedMatrix)
 
 void multMat2Vec(const Mat2 transformedSpace, Vec2 transformedVector)
 {
-	// NOTE: might need to add a for loop here for better readability or adaptability
-
 	Mat2 tempCopyOfMatrix;
 	copyMat2(transformedSpace, tempCopyOfMatrix);
+
+	for (int columnIndex = 0; columnIndex < MAT2_NUM_OF_COLUMNS; columnIndex++)
+	{
+		scaleVec2(transformedVector[columnIndex], tempCopyOfMatrix[columnIndex]);
+	}
+
+	sumOfVec2(transformedVector, 2, tempCopyOfMatrix[0], tempCopyOfMatrix[1]);
 }
 
-void productOfMat2Vecs(const Mat2 transformedSpace, const size_t numOfVectors, ...);
+void productOfMat2Vecs(const Mat2 transformedSpace, const size_t numOfVectors, ...)
+{
+	int argIndex;
+	va_list argInfo;
 
-void multMat2Mat(const Mat2 transformedSpace, Mat2 transformedMatrix);
+	va_start(argInfo, numOfVectors);
+
+	for (argIndex = 0; argIndex < numOfVectors; argIndex++)
+	{
+		multMat2Vec(transformedSpace, va_arg(argInfo, float*));
+	}
+
+	va_end(argInfo);
+}
+
+void multMat2Mat(const Mat2 transformedSpace, Mat2 transformedMatrix)
+{
+	productOfMat2Vecs(transformedSpace, 2, transformedMatrix[0], transformedMatrix[1]);
+}
 
 void printMat2(const Mat2 matrixToPrint)
 {
