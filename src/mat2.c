@@ -54,4 +54,17 @@ void productOfMat2Vecs(const Mat2 transformedSpace, const size_t numOfVectors, .
 
 void multMat2Mat(const Mat2 transformedSpace, Mat2 transformedMatrix);
 
-void printMat2(const Mat2 matrixToPrint);
+void printMat2(const Mat2 matrixToPrint)
+{
+	for (int rowIndex = 0; rowIndex < MAT2_NUM_OF_ROWS; rowIndex++)
+	{
+		printf("| ");
+
+		for (int columnIndex = 0; columnIndex < MAT2_NUM_OF_COLUMNS; columnIndex++)
+		{
+			printf("%f ", matrixToPrint[columnIndex][rowIndex]);
+		}
+
+		printf("|\n");
+	}
+}
