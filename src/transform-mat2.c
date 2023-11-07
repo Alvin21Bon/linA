@@ -1,7 +1,23 @@
 #include "../include/aglm.h"
 
-void scaleXMat2(Mat2 matrixToTransform, const float scaleAmt);
-void scaleYMat2(Mat2 matrixToTransform, const float scaleAmt);
+void scaleXMat2(Mat2 matrixToTransform, const float scaleAmt)
+{
+	Mat2 transformation;
+	fillIdentityMat2(transformation);
+
+	scaleVec2(scaleAmt, transformation[0]);
+
+	multMat2Mat(transformation, matrixToTransform);
+}
+void scaleYMat2(Mat2 matrixToTransform, const float scaleAmt)
+{
+	Mat2 transformation;
+	fillIdentityMat2(transformation);
+
+	scaleVec2(scaleAmt, transformation[1]);
+
+	multMat2Mat(transformation, matrixToTransform);
+}
 
 void rotateXMat2(Mat2 matrixToTransform, const double angleInRadians);
 void rotateYMat2(Mat2 matrixToTransform, const double angleInRadians);
