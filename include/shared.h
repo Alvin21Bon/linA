@@ -5,5 +5,6 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
+#include <math.h>
 
 #endif // AGLM_SHARED_H
