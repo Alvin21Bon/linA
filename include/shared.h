@@ -7,4 +7,9 @@
 #include <stdio.h>
 #include <math.h>
 
+inline double TO_RADIANS(double degrees)
+{
+	return (degrees * (M_PI / (double)180));
+}
+
 #endif // AGLM_SHARED_H
