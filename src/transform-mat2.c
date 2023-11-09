@@ -100,11 +100,40 @@ void reflectY(Mat2 matrixToTransform)
 	reflectPlaneYZMat2(matrixToTransform);
 }
 
-void shearPlaneYZMat2(Mat2 matrixToTransform, const float shearAmt);
-void shearPlaneZYMat2(Mat2 matrixToTransform, const float shearAmt);
+void shearPlaneYZMat2(Mat2 matrixToTransform, const float shearAmt)
+{
+	Mat2 transformation;
+	fillIdentityMat2(transformation);
 
-void shearPlaneZXMat2(Mat2 matrixToTransform, const float shearAmt);
-void shearPlaneXZMat2(Mat2 matrixToTransform, const float shearAmt);
+	fillVec2(1, shearAmt, transformation[0]);
 
-void shearX(Mat2 matrixToTransform, const float shearAmt);
-void shearY(Mat2 matrixToTransform, const float shearAmt);
+	multMat2Mat(transformation, matrixToTransform);
+}
+void shearPlaneZYMat2(Mat2 matrixToTransform, const float shearAmt)
+{
+	shearPlaneYZMat2(matrixToTransform, shearAmt);
+}
+
+void shearPlaneZXMat2(Mat2 matrixToTransform, const float shearAmt)
+{
+	Mat2 transformation;
+	fillIdentityMat2(transformation);
+
+
+	fillVec2(shearAmt, 1, transformation[1]);
+
+	multMat2Mat(transformation, matrixToTransform);
+}
+void shearPlaneXZMat2(Mat2 matrixToTransform, const float shearAmt)
+{
+	shearPlaneZXMat2(matrixToTransform, shearAmt);
+}
+
+void shearX(Mat2 matrixToTransform, const float shearAmt)
+{
+	shearPlaneZXMat2(matrixToTransform, shearAmt);
+}
+void shearY(Mat2 matrixToTransform, const float shearAmt)
+{
+	shearPlaneYZMat2(matrixToTransform, shearAmt);
+}
