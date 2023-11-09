@@ -117,7 +117,15 @@ void reflectPlaneYXMat3(Mat3 matrixToTransform)
 	reflectPlaneYXMat3(matrixToTransform);
 }
 
-void translate2DMat3(Mat3 matrixToTransform, const float x, const float y);
+void translate2DMat3(Mat3 matrixToTransform, const float x, const float y)
+{
+	Mat3 transformation;
+	fillIdentityMat3(transformation);
+
+	fillVec3(x, y, 1, transformation[2]);
+
+	multMat3Mat(transformation, matrixToTransform);
+}
 
 void shearPlaneYZMat3(Mat3 matrixToTransform, const float shearAmt);
 void shearPlaneZYMat3(Mat3 matrixToTransform, const float shearAmt);
