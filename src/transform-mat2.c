@@ -63,14 +63,42 @@ void rollMat2(Mat2 matrixToTransform, const double angleInRadians)
 	rotateZMat2(matrixToTransform, angleInRadians);
 }
 
-void reflectPlaneYZMat2(Mat2 matrixToTransform); 
-void reflectPlaneZYMat2(Mat2 matrixToTransform);
+void reflectPlaneYZMat2(Mat2 matrixToTransform) 
+{
+	Mat2 transformation;
+	fillIdentityMat2(transformation);
 
-void reflectPlaneZXMat2(Mat2 matrixToTransform);
-void reflectPlaneXZMat2(Mat2 matrixToTransform);
+	negVec2(transformation[0]);
 
-void reflectX(Mat2 matrixToTransform);
-void reflectY(Mat2 matrixToTransform);
+	multMat2Mat(transformation, matrixToTransform);
+}
+void reflectPlaneZYMat2(Mat2 matrixToTransform)
+{
+	reflectPlaneYZMat2(matrixToTransform);
+}
+
+void reflectPlaneZXMat2(Mat2 matrixToTransform)
+{
+	Mat2 transformation;
+	fillIdentityMat2(transformation);
+
+	negVec2(transformation[1]);
+
+	multMat2Mat(transformation, matrixToTransform);
+}
+void reflectPlaneXZMat2(Mat2 matrixToTransform)
+{
+	reflectPlaneZXMat2(matrixToTransform);
+}
+
+void reflectX(Mat2 matrixToTransform)
+{
+	reflectPlaneZXMat2(matrixToTransform);
+}
+void reflectY(Mat2 matrixToTransform)
+{
+	reflectPlaneYZMat2(matrixToTransform);
+}
 
 void shearPlaneYZMat2(Mat2 matrixToTransform, const float shearAmt);
 void shearPlaneZYMat2(Mat2 matrixToTransform, const float shearAmt);
