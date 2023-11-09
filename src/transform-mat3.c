@@ -62,18 +62,60 @@ void rotateZMat3(Mat3 matrixToTransform, const double angleInRadians)
 	multMat3Mat(transformation, matrixToTransform);
 }
 
-void pitchMat3(Mat3 matrixToTransform, const double angleInRadians);
-void yawMat3(Mat3 matrixToTransform, const double angleInRadians);
-void rollMat3(Mat3 matrixToTransform, const double angleInRadians);
+void pitchMat3(Mat3 matrixToTransform, const double angleInRadians)
+{
+	rotateXMat3(matrixToTransform, angleInRadians);
+}
+void yawMat3(Mat3 matrixToTransform, const double angleInRadians)
+{
+	rotateYMat3(matrixToTransform, angleInRadians);
+}
+void rollMat3(Mat3 matrixToTransform, const double angleInRadians)
+{
+	rotateZMat3(matrixToTransform, angleInRadians);
+}
 
-void reflectPlaneYZMat3(Mat3 matrixToTransform); 
-void reflectPlaneZYMat3(Mat3 matrixToTransform);
+void reflectPlaneYZMat3(Mat3 matrixToTransform)
+{
+	Mat3 transformation;
+	fillIdentityMat3(transformation);
 
-void reflectPlaneZXMat3(Mat3 matrixToTransform);
-void reflectPlaneXZMat3(Mat3 matrixToTransform);
+	negVec3(transformation[0]);
 
-void reflectPlaneXYMat3(Mat3 matrixToTransform);
-void reflectPlaneYXMat3(Mat3 matrixToTransform);
+	multMat3Mat(transformation, matrixToTransform);
+}
+void reflectPlaneZYMat3(Mat3 matrixToTransform)
+{
+	reflectPlaneYZMat3(matrixToTransform);
+}
+
+void reflectPlaneZXMat3(Mat3 matrixToTransform)
+{
+	Mat3 transformation;
+	fillIdentityMat3(transformation);
+
+	negVec3(transformation[1]);
+
+	multMat3Mat(transformation, matrixToTransform);
+}
+void reflectPlaneXZMat3(Mat3 matrixToTransform)
+{
+	reflectPlaneZXMat3(matrixToTransform);
+}
+
+void reflectPlaneXYMat3(Mat3 matrixToTransform)
+{
+	Mat3 transformation;
+	fillIdentityMat3(transformation);
+
+	negVec3(transformation[2]);
+
+	multMat3Mat(transformation, matrixToTransform);
+}
+void reflectPlaneYXMat3(Mat3 matrixToTransform)
+{
+	reflectPlaneYXMat3(matrixToTransform);
+}
 
 void translate2DMat3(Mat3 matrixToTransform, const float x, const float y);
 
