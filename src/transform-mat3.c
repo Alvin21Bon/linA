@@ -114,7 +114,7 @@ void reflectPlaneXYMat3(Mat3 matrixToTransform)
 }
 void reflectPlaneYXMat3(Mat3 matrixToTransform)
 {
-	reflectPlaneYXMat3(matrixToTransform);
+	reflectPlaneXYMat3(matrixToTransform);
 }
 
 void translate2DMat3(Mat3 matrixToTransform, const float x, const float y)
