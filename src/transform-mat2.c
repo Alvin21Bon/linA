@@ -19,9 +19,36 @@ void scaleYMat2(Mat2 matrixToTransform, const float scaleAmt)
 	multMat2Mat(transformation, matrixToTransform);
 }
 
-void rotateXMat2(Mat2 matrixToTransform, const double angleInRadians);
-void rotateYMat2(Mat2 matrixToTransform, const double angleInRadians);
-void rotateZMat2(Mat2 matrixToTransform, const double angleInRadians);
+void rotateXMat2(Mat2 matrixToTransform, const double angleInRadians)
+{
+	Mat2 transformation;
+	Vec2 transformedIHat = {1, 0};
+	Vec2 transformedJHat = {0, cos(angleInRadians)};
+
+	fillMat2(transformedIHat, transformedJHat, transformation);
+
+	multMat2Mat(transformation, matrixToTransform);
+}
+void rotateYMat2(Mat2 matrixToTransform, const double angleInRadians)
+{
+	Mat2 transformation;
+	Vec2 transformedIHat = {cos(angleInRadians), 0};
+	Vec2 transformedJHat = {0, 1};
+
+	fillMat2(transformedIHat, transformedJHat, transformation);
+
+	multMat2Mat(transformation, matrixToTransform);
+}
+void rotateZMat2(Mat2 matrixToTransform, const double angleInRadians)
+{
+	Mat2 transformation;
+	Vec2 transformedIHat = {cos(angleInRadians), sin(angleInRadians)};
+	Vec2 transformedJHat = {-sin(angleInRadians), cos(angleInRadians)};
+
+	fillMat2(transformedIHat, transformedJHat, transformation);
+
+	multMat2Mat(transformation, matrixToTransform);
+}
 
 void pitchMat2(Mat2 matrixToTransform, const double angleInRadians);
 void yawMat2(Mat2 matrixToTransform, const double angleInRadians);
