@@ -65,9 +65,18 @@ void rotateZMat4(Mat4 matrixToTransform, const double angleInRadians)
 	multMat4Mat(transformation, matrixToTransform);
 }
 
-void pitchMat4(Mat4 matrixToTransform, const double angleInRadians);
-void yawMat4(Mat4 matrixToTransform, const double angleInRadians);
-void rollMat4(Mat4 matrixToTransform, const double angleInRadians);
+void pitchMat4(Mat4 matrixToTransform, const double angleInRadians)
+{
+	rotateXMat4(matrixToTransform, angleInRadians);
+}
+void yawMat4(Mat4 matrixToTransform, const double angleInRadians)
+{
+	rotateYMat4(matrixToTransform, angleInRadians);
+}
+void rollMat4(Mat4 matrixToTransform, const double angleInRadians)
+{
+	rotateZMat4(matrixToTransform, angleInRadians);
+}
 
 void reflectPlaneYZMat4(Mat4 matrixToTransform); 
 void reflectPlaneZYMat4(Mat4 matrixToTransform);
