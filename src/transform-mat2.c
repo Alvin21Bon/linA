@@ -105,7 +105,6 @@ void shearX(Mat2 matrixToTransform, const float shearAmt)
 	Mat2 transformation;
 	fillIdentityMat2(transformation);
 
-
 	fillVec2(shearAmt, 1, transformation[1]);
 
 	multMat2Mat(transformation, matrixToTransform);
