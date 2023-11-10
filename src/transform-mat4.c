@@ -120,8 +120,24 @@ void reflectPlaneYXMat4(Mat4 matrixToTransform)
 	reflectPlaneXYMat4(matrixToTransform);
 }
 
-void translate2DMat4(Mat4 matrixToTransform, const float x, const float y);
-void translate3D(Mat4 matrixToTransform, const float x, const float y, const float z);
+void translate2DMat4(Mat4 matrixToTransform, const float x, const float y)
+{
+	Mat4 transformation;
+	fillIdentityMat4(transformation);
+
+	fillVec4(x, y, 0, 1, transformation[3]);
+
+	multMat4Mat(transformation, matrixToTransform);
+}
+void translate3D(Mat4 matrixToTransform, const float x, const float y, const float z)
+{
+	Mat4 transformation;
+	fillIdentityMat4(transformation);
+
+	fillVec4(x, y, z, 1, transformation[3]);
+
+	multMat4Mat(transformation, matrixToTransform);
+}
 
 void shearPlaneYZMat4(Mat4 matrixToTransform, const float shearAmtY, const float shearAmtZ);
 void shearPlaneZYMat4(Mat4 matrixToTransform, const float shearAmtY, const float shearAmtZ);
