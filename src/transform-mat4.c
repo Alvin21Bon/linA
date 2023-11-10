@@ -78,14 +78,47 @@ void rollMat4(Mat4 matrixToTransform, const double angleInRadians)
 	rotateZMat4(matrixToTransform, angleInRadians);
 }
 
-void reflectPlaneYZMat4(Mat4 matrixToTransform); 
-void reflectPlaneZYMat4(Mat4 matrixToTransform);
+void reflectPlaneYZMat4(Mat4 matrixToTransform) 
+{
+	Mat4 transformation;
+	fillIdentityMat4(transformation);
 
-void reflectPlaneZXMat4(Mat4 matrixToTransform);
-void reflectPlaneXZMat4(Mat4 matrixToTransform);
+	negVec4(transformation[0]);
 
-void reflectPlaneXYMat4(Mat4 matrixToTransform);
-void reflectPlaneYXMat4(Mat4 matrixToTransform);
+	multMat4Mat(transformation, matrixToTransform);
+}
+void reflectPlaneZYMat4(Mat4 matrixToTransform)
+{
+	reflectPlaneYZMat4(matrixToTransform);
+}
+
+void reflectPlaneZXMat4(Mat4 matrixToTransform)
+{
+	Mat4 transformation;
+	fillIdentityMat4(transformation);
+
+	negVec4(transformation[1]);
+
+	multMat4Mat(transformation, matrixToTransform);
+}
+void reflectPlaneXZMat4(Mat4 matrixToTransform)
+{
+	reflectPlaneZXMat4(matrixToTransform);
+}
+
+void reflectPlaneXYMat4(Mat4 matrixToTransform)
+{
+	Mat4 transformation;
+	fillIdentityMat4(transformation);
+
+	negVec4(transformation[2]);
+
+	multMat4Mat(transformation, matrixToTransform);
+}
+void reflectPlaneYXMat4(Mat4 matrixToTransform)
+{
+	reflectPlaneXYMat4(matrixToTransform);
+}
 
 void translate2DMat4(Mat4 matrixToTransform, const float x, const float y);
 void translate3D(Mat4 matrixToTransform, const float x, const float y, const float z);
