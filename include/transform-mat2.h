@@ -46,12 +46,6 @@ void reflectY(Mat2 matrixToTransform);
 ******************************************************************************/
 
 //
-void shearPlaneYZMat2(Mat2 matrixToTransform, const float shearAmt);
-void shearPlaneZYMat2(Mat2 matrixToTransform, const float shearAmt);
-
-void shearPlaneZXMat2(Mat2 matrixToTransform, const float shearAmt);
-void shearPlaneXZMat2(Mat2 matrixToTransform, const float shearAmt);
-
 void shearX(Mat2 matrixToTransform, const float shearAmt);
 void shearY(Mat2 matrixToTransform, const float shearAmt);
 

@@ -54,13 +54,13 @@ void translate2DMat3(Mat3 matrixToTransform, const float x, const float y);
 ******************************************************************************/
 
 //
-void shearPlaneYZMat3(Mat3 matrixToTransform, const float shearAmt);
-void shearPlaneZYMat3(Mat3 matrixToTransform, const float shearAmt);
+void shearPlaneYZMat3(Mat3 matrixToTransform, const float shearAmtY, const float shearAmtZ);
+void shearPlaneZYMat3(Mat3 matrixToTransform, const float shearAmtY, const float shearAmtZ);
 
-void shearPlaneZXMat3(Mat3 matrixToTransform, const float shearAmt);
-void shearPlaneXZMat3(Mat3 matrixToTransform, const float shearAmt);
+void shearPlaneZXMat3(Mat3 matrixToTransform, const float shearAmtZ, const float shearAmtX);
+void shearPlaneXZMat3(Mat3 matrixToTransform, const float shearAmtZ, const float shearAmtX);
 
-void shearPlaneXYMat3(Mat3 matrixToTransform, const float shearAmt);
-void shearPlaneYXMat3(Mat3 matrixToTransform, const float shearAmt);
+void shearPlaneXYMat3(Mat3 matrixToTransform, const float shearAmtX, const float shearAmtY);
+void shearPlaneYXMat3(Mat3 matrixToTransform, const float shearAmtX, const float shearAmtY);
 
 #endif // AGLM_TRANSFORM_MAT3_H
