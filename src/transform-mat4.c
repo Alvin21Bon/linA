@@ -139,12 +139,45 @@ void translate3D(Mat4 matrixToTransform, const float x, const float y, const flo
 	multMat4Mat(transformation, matrixToTransform);
 }
 
-void shearPlaneYZMat4(Mat4 matrixToTransform, const float shearAmtY, const float shearAmtZ);
-void shearPlaneZYMat4(Mat4 matrixToTransform, const float shearAmtY, const float shearAmtZ);
+void shearPlaneYZMat4(Mat4 matrixToTransform, const float shearAmtY, const float shearAmtZ)
+{
+	Mat4 transformation;
+	fillIdentityMat4(transformation);
 
-void shearPlaneZXMat4(Mat4 matrixToTransform, const float shearAmtZ, const float shearAmtX);
-void shearPlaneXZMat4(Mat4 matrixToTransform, const float shearAmtZ, const float shearAmtX);
+	fillVec4(1, shearAmtY, shearAmtZ, 0, transformation[0]);
 
-void shearPlaneXYMat4(Mat4 matrixToTransform, const float shearAmtX, const float shearAmtY);
-void shearPlaneYXMat4(Mat4 matrixToTransform, const float shearAmtX, const float shearAmtY);
+	multMat4Mat(transformation, matrixToTransform);
+}
+void shearPlaneZYMat4(Mat4 matrixToTransform, const float shearAmtY, const float shearAmtZ)
+{
+	shearPlaneYZMat4(matrixToTransform, shearAmtY, shearAmtZ);
+}
+
+void shearPlaneZXMat4(Mat4 matrixToTransform, const float shearAmtZ, const float shearAmtX)
+{
+	Mat4 transformation;
+	fillIdentityMat4(transformation);
+
+	fillVec4(shearAmtX, 1, shearAmtZ, 0, transformation[1]);
+
+	multMat4Mat(transformation, matrixToTransform);
+}
+void shearPlaneXZMat4(Mat4 matrixToTransform, const float shearAmtZ, const float shearAmtX)
+{
+	shearPlaneZXMat4(matrixToTransform, shearAmtZ, shearAmtX);
+}
+
+void shearPlaneXYMat4(Mat4 matrixToTransform, const float shearAmtX, const float shearAmtY)
+{
+	Mat4 transformation;
+	fillIdentityMat4(transformation);
+
+	fillVec4(shearAmtX, shearAmtY, 1, 0, transformation[2]);
+
+	multMat4Mat(transformation, matrixToTransform);
+}
+void shearPlaneYXMat4(Mat4 matrixToTransform, const float shearAmtX, const float shearAmtY)
+{
+	shearPlaneXYMat4(matrixToTransform, shearAmtX, shearAmtY);
+}
 
