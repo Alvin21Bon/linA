@@ -32,8 +32,8 @@ void rotateXMat4(Mat4 matrixToTransform, const double angleInRadians)
 {
 	Mat4 transformation;
 	Vec4 transformedIHat = {1, 0, 0, 0};
-	Vec4 transformedJHat = {0, cos(angleInRadians), sin(angleInRadians), 0};
-	Vec4 transformedKHat = {0, -sin(angleInRadians), cos(angleInRadians), 0};
+	Vec4 transformedJHat = {0, cos(angleInRadians), -sin(angleInRadians), 0};
+	Vec4 transformedKHat = {0, sin(angleInRadians), cos(angleInRadians), 0};
 	Vec4 transformedLHat = {0, 0, 0, 1};
 
 	fillMat4(transformedIHat, transformedJHat, transformedKHat, transformedLHat, transformation);
@@ -43,9 +43,9 @@ void rotateXMat4(Mat4 matrixToTransform, const double angleInRadians)
 void rotateYMat4(Mat4 matrixToTransform, const double angleInRadians)
 {
 	Mat4 transformation;
-	Vec4 transformedIHat = {cos(angleInRadians), 0, -sin(angleInRadians), 0};
+	Vec4 transformedIHat = {cos(angleInRadians), 0, sin(angleInRadians), 0};
 	Vec4 transformedJHat = {0, 1, 0, 0};
-	Vec4 transformedKHat = {sin(angleInRadians), 0, cos(angleInRadians), 0};
+	Vec4 transformedKHat = {-sin(angleInRadians), 0, cos(angleInRadians), 0};
 	Vec4 transformedLHat = {0, 0, 0, 1};
 
 	fillMat4(transformedIHat, transformedJHat, transformedKHat, transformedLHat, transformation);

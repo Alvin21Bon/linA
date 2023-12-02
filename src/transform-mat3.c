@@ -32,8 +32,8 @@ void rotateXMat3(Mat3 matrixToTransform, const double angleInRadians)
 {
 	Mat3 transformation;
 	Vec3 transformedIHat = {1, 0, 0};
-	Vec3 transformedJHat = {0, cos(angleInRadians), sin(angleInRadians)};
-	Vec3 transformedKHat = {0, -sin(angleInRadians), cos(angleInRadians)};
+	Vec3 transformedJHat = {0, cos(angleInRadians), -sin(angleInRadians)};
+	Vec3 transformedKHat = {0, sin(angleInRadians), cos(angleInRadians)};
 
 	fillMat3(transformedIHat, transformedJHat, transformedKHat, transformation);
 
@@ -42,9 +42,9 @@ void rotateXMat3(Mat3 matrixToTransform, const double angleInRadians)
 void rotateYMat3(Mat3 matrixToTransform, const double angleInRadians)
 {
 	Mat3 transformation;
-	Vec3 transformedIHat = {cos(angleInRadians), 0, -sin(angleInRadians)};
+	Vec3 transformedIHat = {cos(angleInRadians), 0, sin(angleInRadians)};
 	Vec3 transformedJHat = {0, 1, 0};
-	Vec3 transformedKHat = {sin(angleInRadians), 0, cos(angleInRadians)};
+	Vec3 transformedKHat = {-sin(angleInRadians), 0, cos(angleInRadians)};
 
 	fillMat3(transformedIHat, transformedJHat, transformedKHat, transformation);
 
