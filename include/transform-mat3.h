@@ -1,5 +1,5 @@
-#ifndef AGLM_TRANSFORM_MAT3_H
-#define AGLM_TRANSFORM_MAT3_H
+#ifndef LINA_TRANSFORM_MAT3_H
+#define LINA_TRANSFORM_MAT3_H
 
 #include "shared.h"
 #include "mat3.h"
@@ -63,4 +63,4 @@ void shearPlaneXZMat3(Mat3 matrixToTransform, const float shearAmtZ, const float
 void shearPlaneXYMat3(Mat3 matrixToTransform, const float shearAmtX, const float shearAmtY);
 void shearPlaneYXMat3(Mat3 matrixToTransform, const float shearAmtX, const float shearAmtY);
 
-#endif // AGLM_TRANSFORM_MAT3_H
+#endif // LINA_TRANSFORM_MAT3_H

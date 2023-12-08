@@ -1,5 +1,5 @@
-#ifndef AGLM_MAT2_H
-#define AGLM_MAT2_H
+#ifndef LINA_MAT2_H
+#define LINA_MAT2_H
 
 #include "shared.h"
 #include "vec2.h"
@@ -35,4 +35,4 @@ void multMat2Mat(const Mat2 transformedSpace, Mat2 transformedMatrix);
 
 void printMat2(const Mat2 matrixToPrint);
 
-#endif // AGLM_MAT2_H
+#endif // LINA_MAT2_H

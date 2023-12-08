@@ -1,5 +1,5 @@
-#ifndef AGLM_TRANSFORM_MAT4_H
-#define AGLM_TRANSFORM_MAT4_H
+#ifndef LINA_TRANSFORM_MAT4_H
+#define LINA_TRANSFORM_MAT4_H
 
 #include "shared.h"
 #include "mat4.h"
@@ -64,4 +64,4 @@ void shearPlaneXZMat4(Mat4 matrixToTransform, const float shearAmtZ, const float
 void shearPlaneXYMat4(Mat4 matrixToTransform, const float shearAmtX, const float shearAmtY);
 void shearPlaneYXMat4(Mat4 matrixToTransform, const float shearAmtX, const float shearAmtY);
 
-#endif // AGLM_TRANSFORM_MAT4_H
+#endif // LINA_TRANSFORM_MAT4_H

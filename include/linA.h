@@ -1,9 +1,9 @@
-#ifndef AGLM_AGLM_H
-#define AGLM_AGLM_H
+#ifndef LINA_LINA_H
+#define LINA_LINA_H
 
 #include "vector.h"
 #include "matrix.h"
 #include "transformations.h"
 #include "shared.h"
 
-#endif // AGLM_AGLM_H
+#endif // LINA_LINA_H

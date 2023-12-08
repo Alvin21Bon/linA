@@ -1,8 +1,8 @@
-#ifndef AGLM_TRANSFORMATIONS_H
-#define AGLM_TRANSFORMATIONS_H
+#ifndef LINA_TRANSFORMATIONS_H
+#define LINA_TRANSFORMATIONS_H
 
 #include "transform-mat2.h"
 #include "transform-mat3.h"
 #include "transform-mat4.h"
 
-#endif // AGLM_TRANSFORMATIONS_H
+#endif // LINA_TRANSFORMATIONS_H

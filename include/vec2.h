@@ -1,5 +1,5 @@
-#ifndef AGLM_VEC2_H
-#define AGLM_VEC2_H
+#ifndef LINA_VEC2_H
+#define LINA_VEC2_H
 
 #include "shared.h"
 
@@ -23,4 +23,4 @@ void differenceOfVec2(Vec2 outputVector, const size_t numOfOperands, ...);
 void scaleVec2(const float scalar, Vec2 scaledVector);
 void negVec2(Vec2 negatedVector);
 
-#endif // AGLM_VEC2_H
+#endif // LINA_VEC2_H

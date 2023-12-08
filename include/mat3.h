@@ -1,5 +1,5 @@
-#ifndef AGLM_MAT3_H
-#define AGLM_MAT3_H
+#ifndef LINA_MAT3_H
+#define LINA_MAT3_H
 
 #include "shared.h"
 #include "vec3.h"
@@ -36,4 +36,4 @@ void multMat3Mat(const Mat3 transformedSpace, Mat3 transformedMatrix);
 
 void printMat3(const Mat3 matrixToPrint);
 
-#endif // AGLM_MAT3_H
+#endif // LINA_MAT3_H
