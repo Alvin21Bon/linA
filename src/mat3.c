@@ -1,4 +1,4 @@
-#include "../include/aglm.h"
+#include "../include/linA.h"
 
 void fillMat3(const Vec3 column0, const Vec3 column1, const Vec3 column2, Mat3 outputMatrix)
 {

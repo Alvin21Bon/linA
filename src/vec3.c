@@ -1,4 +1,4 @@
-#include "../include/aglm.h"
+#include "../include/linA.h"
 
 void fillVec3(const float x, const float y, const float z, Vec3 outputVector)
 {

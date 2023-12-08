@@ -1,4 +1,4 @@
-#include "../include/aglm.h"
+#include "../include/linA.h"
 
 void scaleXMat2(Mat2 matrixToTransform, const float scaleAmt)
 {
