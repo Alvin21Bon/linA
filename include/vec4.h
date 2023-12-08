@@ -3,7 +3,19 @@
 
 #include "shared.h"
 
-typedef float Vec4[4];
+typedef union Vec4 {
+	float elements[4];
+
+	struct {
+		float x, y, z, w;
+	};
+	struct {
+		float r, g, b, a;
+	};
+	struct {
+		float s, t, p, q;
+	};
+} Vec4;
 
 void fillVec4(const float x, const float y, const float z, const float w, Vec4 outputVector);
 void zeroVec4(Vec4 zeroedVector);

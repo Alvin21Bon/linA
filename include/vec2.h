@@ -3,7 +3,16 @@
 
 #include "shared.h"
 
-typedef float Vec2[2];
+typedef union Vec2 {
+	float elements[2];
+
+	struct {
+		float x, y;
+	};	
+	struct {
+		float s, t;
+	};	
+} Vec2;
 
 void fillVec2(const float x, const float y, Vec2 outputVector);
 void zeroVec2(Vec2 zeroedVector);
