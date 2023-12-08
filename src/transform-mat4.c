@@ -1,4 +1,4 @@
-#include "../include/linA.h"
+#include "../include/lina.h"
 
 void scaleXMat4(Mat4 matrixToTransform, const float scaleAmt)
 {

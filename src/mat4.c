@@ -1,4 +1,4 @@
-#include "../include/linA.h"
+#include "../include/lina.h"
 
 void fillMat4(const Vec4 column0, const Vec4 column1, const Vec4 column2, const Vec4 column3, Mat4 outputMatrix)
 {

@@ -1,4 +1,4 @@
-#include "../include/linA.h"
+#include "../include/lina.h"
 
 void fillVec2(const float x, const float y, Vec2 outputVector)
 {
