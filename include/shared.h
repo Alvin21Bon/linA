@@ -6,10 +6,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
-
-static inline double TO_RADIANS(double degrees)
-{
-	return (degrees * (M_PI / (double)180));
-}
+#include "preprocessor.h"
 
 #endif // LINA_SHARED_H
