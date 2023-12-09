@@ -12,6 +12,9 @@ typedef union Vec2 {
 	struct {
 		float s, t;
 	};	
+	struct {
+		float width, height;
+	};
 } Vec2;
 
 void fillVec2(const float x, const float y, Vec2 outputVector);
