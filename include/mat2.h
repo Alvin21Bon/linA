@@ -8,7 +8,15 @@
 #define MAT2_NUM_OF_ROWS 2
 #define MAT2_NUM_OF_ELEMENTS (MAT2_NUM_OF_COLUMNS * MAT2_NUM_OF_ROWS) 
 
-typedef Vec2 Mat2[2];
+typedef union Mat2 {
+	float elements[2][2];
+	Vec2 columns[2];
+
+	struct {
+		Vec2 col0;
+		Vec2 col1;
+	};
+} Mat2;
 
 void fillMat2(const Vec2 column0, const Vec2 column1, Mat2 outputMatrix);
 

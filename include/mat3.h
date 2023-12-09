@@ -8,7 +8,16 @@
 #define MAT3_NUM_OF_ROWS 3
 #define MAT3_NUM_OF_ELEMENTS (MAT3_NUM_OF_COLUMNS * MAT3_NUM_OF_ROWS) 
 
-typedef Vec3 Mat3[3];
+typedef union Mat3 {
+	float elements[3][3];
+	Vec3 columns[3];
+
+	struct {
+		Vec3 col0;
+		Vec3 col1;
+		Vec3 col2;
+	};
+} Mat3;
 
 void fillMat3(const Vec3 column0, const Vec3 column1, const Vec3 column2, Mat3 outputMatrix);
 

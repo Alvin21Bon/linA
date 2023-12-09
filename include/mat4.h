@@ -8,7 +8,17 @@
 #define MAT4_NUM_OF_ROWS 4
 #define MAT4_NUM_OF_ELEMENTS (MAT4_NUM_OF_COLUMNS * MAT4_NUM_OF_ROWS) 
 
-typedef Vec4 Mat4[4];
+typedef union Mat4 {
+	float elements[4][4];
+	Vec4 columns[4];
+
+	struct {
+		Vec4 col0;
+		Vec4 col1;
+		Vec4 col2;
+		Vec4 col3;
+	};
+} Mat4;
 
 void fillMat4(const Vec4 column0, const Vec4 column1, const Vec4 column2, const Vec4 column3, Mat4 outputMatrix);
 
