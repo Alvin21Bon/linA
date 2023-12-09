@@ -16,6 +16,10 @@ typedef union Mat2 {
 		Vec2 col0;
 		Vec2 col1;
 	};
+	struct {
+		Vec2 colX;
+		Vec2 colY;
+	};
 } Mat2;
 
 void fillMat2(const Vec2 column0, const Vec2 column1, Mat2 outputMatrix);

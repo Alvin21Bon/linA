@@ -17,6 +17,11 @@ typedef union Mat3 {
 		Vec3 col1;
 		Vec3 col2;
 	};
+	struct {
+		Vec3 colX;
+		Vec3 colY;
+		Vec3 colZ;
+	};
 } Mat3;
 
 void fillMat3(const Vec3 column0, const Vec3 column1, const Vec3 column2, Mat3 outputMatrix);

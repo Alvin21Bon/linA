@@ -18,6 +18,12 @@ typedef union Mat4 {
 		Vec4 col2;
 		Vec4 col3;
 	};
+	struct {
+		Vec4 colX;
+		Vec4 colY;
+		Vec4 colZ;
+		Vec4 colW;
+	};
 } Mat4;
 
 void fillMat4(const Vec4 column0, const Vec4 column1, const Vec4 column2, const Vec4 column3, Mat4 outputMatrix);
