@@ -17,22 +17,22 @@ typedef union Vec2 {
 	};
 } Vec2;
 
-void fillVec2(const float x, const float y, Vec2 outputVector);
-void zeroVec2(Vec2 zeroedVector);
-void copyVec2(const Vec2 inputVector, Vec2 copyIntoVector);
+// constructors
+Vec2 vec2(const float e1, const float e2);
+Vec2 vec2Fill(const float fillValue);
+Vec2 vec2Zero();
 
-void addVec2(const Vec2 vectorA, const Vec2 vectorB, Vec2 outputVector);
-void subtractVec2(const Vec2 vectorA, const Vec2 vectorB, Vec2 outputVector);
+// operations
+Vec2 vec2Add(const Vec2 left, const Vec2 right);
+Vec2 vec2Sub(const Vec2 left, const Vec2 right);
+Vec2 vec2Dot(const Vec2 left, const Vec2 right);
+float vec2Cross(const Vec2 left, const Vec2 right);
+Vec2 vec2Negated(const Vec2 vec);
+Vec2 vec2Scaled(const Vec2 vec, const float scalar);
+Vec2 vec2Rotated(const Vec2 vec, const float radians);
+Vec2 vec2Normalized(const Vec2 vec);
 
-/*
- * These functions allow for a variable amount of vectors to be added or subtracted together. 
- * To use the function, simply add as many vector arguments as you want, while specifying the
- * number of vectors.
-*/
-void sumOfVec2(Vec2 outputVector, const size_t numOfOperands, ...);
-void differenceOfVec2(Vec2 outputVector, const size_t numOfOperands, ...);
-
-void scaleVec2(const float scalar, Vec2 scaledVector);
-void negVec2(Vec2 negatedVector);
+// vector info
+float vec2Length(const Vec2 vec);
 
 #endif // LINA_VEC2_H

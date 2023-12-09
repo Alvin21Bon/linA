@@ -31,22 +31,24 @@ typedef union Vec3 {
 	};
 } Vec3;
 
-void fillVec3(const float x, const float y, const float z, Vec3 outputVector);
-void zeroVec3(Vec3 zeroedVector);
-void copyVec3(const Vec3 inputVector, Vec3 copyIntoVector);
+// constructors
+Vec3 vec3(const float e1, const float e2, const float e3);
+Vec3 vec3F(const float e1, const float e2, const float e3); // helper
+Vec3 vec3V(const Vec2 vec, const float e3);
+Vec3 vec3Fill(const float fillValue);
+Vec3 vec3Zero();
 
-void addVec3(const Vec3 vectorA, const Vec3 vectorB, Vec3 outputVector);
-void subtractVec3(const Vec3 vectorA, const Vec3 vectorB, Vec3 outputVector);
+// operations
+Vec3 vec3Add(const Vec3 left, const Vec3 right);
+Vec3 vec3Sub(const Vec3 left, const Vec3 right);
+Vec3 vec3Dot(const Vec3 left, const Vec3 right);
+Vec3 vec3Cross(const Vec3 left, const Vec3 right);
+Vec3 vec3Negated(const Vec3 vec);
+Vec3 vec3Scaled(const Vec3 vec, const float scalar);
+Vec3 vec3Rotated(const Vec3 vec, const float radians);
+Vec3 vec3Normalized(const Vec3 vec);
 
-/*
- * These functions allow for a variable amount of vectors to be added or subtracted together. 
- * To use the function, simply add as many vector arguments as you want, while specifying the
- * number of vectors.
-*/
-void sumOfVec3(Vec3 outputVector, const size_t numOfOperands, ...);
-void differenceOfVec3(Vec3 outputVector, const size_t numOfOperands, ...);
-
-void scaleVec3(const float scalar, Vec3 scaledVector);
-void negVec3(Vec3 negatedVector);
+// vector info
+float vec3Length(const Vec3 vec);
 
 #endif // LINA_VEC3_H

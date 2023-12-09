@@ -47,22 +47,24 @@ typedef union Vec4 {
 	};
 } Vec4;
 
-void fillVec4(const float x, const float y, const float z, const float w, Vec4 outputVector);
-void zeroVec4(Vec4 zeroedVector);
-void copyVec4(const Vec4 inputVector, Vec4 copyIntoVector);
+// constructors
+Vec4 vec4(const float e1, const float e2, const float e3, const float e4);
+Vec4 vec4F(const float e1, const float e2, const float e3, const float e4); // helper
+Vec4 vec4V(const Vec3 vec, const float e4);
+Vec4 vec4Fill(const float fillValue);
+Vec4 vec4Zero();
 
-void addVec4(const Vec4 vectorA, const Vec4 vectorB, Vec4 outputVector);
-void subtractVec4(const Vec4 vectorA, const Vec4 vectorB, Vec4 outputVector);
+// operations
+Vec4 vec4Add(const Vec4 left, const Vec4 right);
+Vec4 vec4Sub(const Vec4 left, const Vec4 right);
+Vec4 vec4Dot(const Vec4 left, const Vec4 right);
+Vec4 vec4Cross(const Vec4 left, const Vec4 right);
+Vec4 vec4Negated(const Vec4 vec);
+Vec4 vec4Scaled(const Vec4 vec, const float scalar);
+Vec4 vec4Rotated(const Vec4 vec, const float radians);
+Vec4 vec4Normalized(const Vec4 vec);
 
-/*
- * These functions allow for a variable amount of vectors to be added or subtracted together. 
- * To use the function, simply add as many vector arguments as you want, while specifying the
- * number of vectors.
-*/
-void sumOfVec4(Vec4 outputVector, const size_t numOfOperands, ...);
-void differenceOfVec4(Vec4 outputVector, const size_t numOfOperands, ...);
-
-void scaleVec4(const float scalar, Vec4 scaledVector);
-void negVec4(Vec4 negatedVector);
+// vector info
+float vec4Length(const Vec4 vec);
 
 #endif // LINA_VEC4_H
