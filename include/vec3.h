@@ -2,6 +2,7 @@
 #define LINA_VEC3_H
 
 #include "shared.h"
+#include "vec2.h"
 
 typedef union Vec3 {
 	float elements[3];
@@ -14,6 +15,19 @@ typedef union Vec3 {
 	};
 	struct {
 		float s, t, p;
+	};
+	
+	// psuedo-swizzling
+	struct {
+		union {
+			Vec2 xy;
+			Vec2 st;
+		};
+		float dummy0;
+	};
+	struct {
+		float dummy1;
+		Vec2 yz;
 	};
 } Vec3;
 
