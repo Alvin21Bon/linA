@@ -57,7 +57,7 @@ Vec4 vec4Zero();
 // operations
 Vec4 vec4Add(const Vec4 left, const Vec4 right);
 Vec4 vec4Sub(const Vec4 left, const Vec4 right);
-Vec4 vec4Dot(const Vec4 left, const Vec4 right);
+float vec4Dot(const Vec4 left, const Vec4 right);
 Vec4 vec4Cross(const Vec4 left, const Vec4 right);
 Vec4 vec4Negated(const Vec4 vec);
 Vec4 vec4Scaled(const Vec4 vec, const float scalar);

@@ -41,7 +41,7 @@ Vec3 vec3Zero();
 // operations
 Vec3 vec3Add(const Vec3 left, const Vec3 right);
 Vec3 vec3Sub(const Vec3 left, const Vec3 right);
-Vec3 vec3Dot(const Vec3 left, const Vec3 right);
+float vec3Dot(const Vec3 left, const Vec3 right);
 Vec3 vec3Cross(const Vec3 left, const Vec3 right);
 Vec3 vec3Negated(const Vec3 vec);
 Vec3 vec3Scaled(const Vec3 vec, const float scalar);
