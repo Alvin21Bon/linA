@@ -8,7 +8,7 @@ Mat4 mat4Diagonalize(const float diagonalValue);
 Mat4 mat4Identity();
 
 // operations
-Mat4 mat4MultVec(const Mat4 mat, const Vec4 vec);
+Vec4 mat4MultVec(const Mat4 mat, const Vec4 vec);
 Mat4 mat4MultMat(const Mat4 left, const Mat4 right);
 Mat4 mat4Inverse(const Mat4 mat);
 

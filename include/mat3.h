@@ -32,7 +32,7 @@ Mat3 mat3Diagonalize(const float diagonalValue);
 Mat3 mat3Identity();
 
 // operations
-Mat3 mat3MultVec(const Mat3 mat, const Vec3 vec);
+Vec3 mat3MultVec(const Mat3 mat, const Vec3 vec);
 Mat3 mat3MultMat(const Mat3 left, const Mat3 right);
 Mat3 mat3Inverse(const Mat3 mat);
 
