@@ -10,7 +10,7 @@
 
 typedef union Mat2 {
 	float elements[2][2];
-	float e[2][2];
+	float e[2][2]; // should be used rarely due to its unobvious name
 	Vec2 columns[2];
 
 	struct {

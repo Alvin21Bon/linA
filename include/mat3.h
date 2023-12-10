@@ -10,7 +10,7 @@
 
 typedef union Mat3 {
 	float elements[3][3];
-	float e[3][3];
+	float e[3][3]; // should be used rarely due to its unobvious name
 	Vec3 columns[3];
 
 	struct {
