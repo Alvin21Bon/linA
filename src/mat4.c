@@ -30,7 +30,7 @@ Mat4 mat4Diagonalize(const float diagonalValue)
 }
 Mat4 mat4Identity()
 {
-	return mat4Fill(1);
+	return mat4Diagonalize(1);
 }
 
 // operations
