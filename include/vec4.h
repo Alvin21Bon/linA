@@ -45,6 +45,12 @@ typedef union Vec4 {
 		};
 		float dummy6;
 	};
+	struct {
+		float dummy7;
+		union {
+			Vec3 yzw;
+		};
+	};
 } Vec4;
 
 // constructors
