@@ -63,9 +63,9 @@ float mat4Determinant(const Mat4 mat)
 	Mat3 detMat2 = mat3(vec3(mat.e[1][0], mat.e[1][1], mat.e[1][3]), vec3(mat.e[2][0], mat.e[2][1], mat.e[2][3]), vec3(mat.e[3][0], mat.e[3][1], mat.e[3][3]));
 	Mat3 detMat3 = mat3(vec3(mat.e[1][0], mat.e[1][1], mat.e[1][2]), vec3(mat.e[2][0], mat.e[2][1], mat.e[2][2]), vec3(mat.e[3][0], mat.e[3][1], mat.e[3][2]));
 
-	return  (mat.col0.x * mat3Determinant(detMat0)) + 
+	return  (mat.col0.x * mat3Determinant(detMat0)) - 
 		(mat.col0.y * mat3Determinant(detMat1)) +
-		(mat.col0.z * mat3Determinant(detMat2)) +
+		(mat.col0.z * mat3Determinant(detMat2)) -
 		(mat.col0.w * mat3Determinant(detMat3)) ;
 }
 void mat4Print(const Mat4 mat)

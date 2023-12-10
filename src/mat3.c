@@ -59,7 +59,7 @@ float mat3Determinant(const Mat3 mat)
 	Mat2 detMat1 = mat2(vec2(mat.e[1][0], mat.e[1][2]), vec2(mat.e[2][0], mat.e[2][2]));
 	Mat2 detMat2 = mat2(vec2(mat.e[1][0], mat.e[1][1]), vec2(mat.e[2][0], mat.e[2][1]));
 
-	return  (mat.col0.x * mat2Determinant(detMat0)) + 
+	return  (mat.col0.x * mat2Determinant(detMat0)) - 
 		(mat.col0.y * mat2Determinant(detMat1)) +
 		(mat.col0.z * mat2Determinant(detMat2)) ;
 	
