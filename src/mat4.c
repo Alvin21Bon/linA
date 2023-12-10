@@ -59,8 +59,8 @@ float mat4Determinant(const Mat4 mat)
 {
 	// this one is even worse :/
 	Mat3 detMat0 = mat3(vec3(mat.e[1][1], mat.e[1][2], mat.e[1][3]), vec3(mat.e[2][1], mat.e[2][2], mat.e[2][3]), vec3(mat.e[3][1], mat.e[3][2], mat.e[3][3]));
-	Mat3 detMat1 = mat3(vec3(mat.e[1][2], mat.e[1][3], mat.e[1][0]), vec3(mat.e[2][2], mat.e[2][3], mat.e[2][0]), vec3(mat.e[3][2], mat.e[3][3], mat.e[3][0]));
-	Mat3 detMat2 = mat3(vec3(mat.e[1][3], mat.e[1][0], mat.e[1][1]), vec3(mat.e[2][3], mat.e[2][0], mat.e[2][1]), vec3(mat.e[3][3], mat.e[3][0], mat.e[3][1]));
+	Mat3 detMat1 = mat3(vec3(mat.e[1][0], mat.e[1][2], mat.e[1][3]), vec3(mat.e[2][0], mat.e[2][2], mat.e[2][3]), vec3(mat.e[3][0], mat.e[3][2], mat.e[3][3]));
+	Mat3 detMat2 = mat3(vec3(mat.e[1][0], mat.e[1][1], mat.e[1][3]), vec3(mat.e[2][0], mat.e[2][1], mat.e[2][3]), vec3(mat.e[3][0], mat.e[3][1], mat.e[3][3]));
 	Mat3 detMat3 = mat3(vec3(mat.e[1][0], mat.e[1][1], mat.e[1][2]), vec3(mat.e[2][0], mat.e[2][1], mat.e[2][2]), vec3(mat.e[3][0], mat.e[3][1], mat.e[3][2]));
 
 	return  (mat.col0.x * mat3Determinant(detMat0)) + 

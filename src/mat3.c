@@ -56,7 +56,7 @@ float mat3Determinant(const Mat3 mat)
 {
 	// wonky ass determinant formula lol
 	Mat2 detMat0 = mat2(vec2(mat.e[1][1], mat.e[1][2]), vec2(mat.e[2][1], mat.e[2][2]));
-	Mat2 detMat1 = mat2(vec2(mat.e[1][2], mat.e[1][0]), vec2(mat.e[2][2], mat.e[2][0]));
+	Mat2 detMat1 = mat2(vec2(mat.e[1][0], mat.e[1][2]), vec2(mat.e[2][0], mat.e[2][2]));
 	Mat2 detMat2 = mat2(vec2(mat.e[1][0], mat.e[1][1]), vec2(mat.e[2][0], mat.e[2][1]));
 
 	return  (mat.col0.x * mat2Determinant(detMat0)) + 

@@ -51,7 +51,7 @@ Mat2 mat2Inverse(const Mat2 mat);
 // matrix info
 float mat2Determinant(const Mat2 mat)
 {
-	return (mat.e[0][0] * mat.e[1][1]) - (mat.e[0][1] * mat.e[1][0]);
+	return (mat.e[0][0] * mat.e[1][1]) - (mat.e[1][0] * mat.e[0][1]);
 }
 void mat2Print(const Mat2 mat)
 {
