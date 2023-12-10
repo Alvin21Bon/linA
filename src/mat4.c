@@ -58,10 +58,10 @@ Mat4 mat4Inverse(const Mat4 mat);
 float mat4Determinant(const Mat4 mat)
 {
 	// this one is even worse :/
-	Mat3 detMat0 = mat3(vec3(mat.e[1][1], mat.e[1][2], mat.e[1][3]), vec3(mat.e[2][1], mat.e[2][2], mat.e[2][3]), vec3(mat.e[3][1], mat.e[3][2], mat.e[3][3]));
+	Mat3 detMat0 = mat3(mat.col1.yzw, mat.col2.yzw, mat.col3.yzw);
 	Mat3 detMat1 = mat3(vec3(mat.e[1][0], mat.e[1][2], mat.e[1][3]), vec3(mat.e[2][0], mat.e[2][2], mat.e[2][3]), vec3(mat.e[3][0], mat.e[3][2], mat.e[3][3]));
-	Mat3 detMat2 = mat3(vec3(mat.e[1][0], mat.e[1][1], mat.e[1][3]), vec3(mat.e[2][0], mat.e[2][1], mat.e[2][3]), vec3(mat.e[3][0], mat.e[3][1], mat.e[3][3]));
-	Mat3 detMat3 = mat3(vec3(mat.e[1][0], mat.e[1][1], mat.e[1][2]), vec3(mat.e[2][0], mat.e[2][1], mat.e[2][2]), vec3(mat.e[3][0], mat.e[3][1], mat.e[3][2]));
+	Mat3 detMat2 = mat3(vec3V(mat.col1.xy, mat.e[1][3]), vec3V(mat.col2.xy, mat.e[2][3]), vec3V(mat.col3.xy, mat.e[3][3]));
+	Mat3 detMat3 = mat3(mat.col1.xyz, mat.col2.xyz, mat.col3.xyz);
 
 	return  (mat.col0.x * mat3Determinant(detMat0)) - 
 		(mat.col0.y * mat3Determinant(detMat1)) +

@@ -55,9 +55,9 @@ Mat3 mat3Inverse(const Mat3 mat);
 float mat3Determinant(const Mat3 mat)
 {
 	// wonky ass determinant formula lol
-	Mat2 detMat0 = mat2(vec2(mat.e[1][1], mat.e[1][2]), vec2(mat.e[2][1], mat.e[2][2]));
+	Mat2 detMat0 = mat2(mat.col1.yz, mat.col2.yz);
 	Mat2 detMat1 = mat2(vec2(mat.e[1][0], mat.e[1][2]), vec2(mat.e[2][0], mat.e[2][2]));
-	Mat2 detMat2 = mat2(vec2(mat.e[1][0], mat.e[1][1]), vec2(mat.e[2][0], mat.e[2][1]));
+	Mat2 detMat2 = mat2(mat.col1.xy, mat.col2.xy);
 
 	return  (mat.col0.x * mat2Determinant(detMat0)) - 
 		(mat.col0.y * mat2Determinant(detMat1)) +
