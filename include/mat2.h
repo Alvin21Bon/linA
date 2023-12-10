@@ -22,29 +22,20 @@ typedef union Mat2 {
 	};
 } Mat2;
 
-void fillMat2(const Vec2 column0, const Vec2 column1, Mat2 outputMatrix);
+// constructors
+Mat2 mat2(const Vec2 col0, const Vec2 col1);
+Mat2 mat2Fill(const float fillValue);
+Mat2 mat2Zero();
+Mat2 mat2Diagonalize(const float diagonalValue);
+Mat2 mat2Identity();
 
-// Arguments are in ROW-MAJOR order. Remember to transpose resulting matrix.
-void fillMat2WithFloats(const float col0row0, const float col1row0, 
-			const float col0row1, const float col1row1,
-			Mat2 outputMatrix);
+// operations
+Mat2 mat2MultVec(const Mat2 mat, const Vec2 vec);
+Mat2 mat2MultMat(const Mat2 left, const Mat2 right);
+Mat2 mat2Inverse(const Mat2 mat);
 
-void zeroMat2(Mat2 zeroedMatrix);
-void copyMat2(const Mat2 inputMatrix, Mat2 copyIntoMatrix);
-void fillIdentityMat2(Mat2 outputMatrix);
-void transposeMat2(Mat2 transposedMatrix);
-
-void multMat2Vec(const Mat2 transformedSpace, Vec2 transformedVector);
-
-/*
- * This function allows for a variable amount of vectors to be multiplied. To use the
- * function, simply add as many vector arguments as you want, while specifying the
- * number of vectors.
-*/
-void productOfMat2Vecs(const Mat2 transformedSpace, const size_t numOfVectors, ...);
-
-void multMat2Mat(const Mat2 transformedSpace, Mat2 transformedMatrix);
-
-void printMat2(const Mat2 matrixToPrint);
+// matrix info
+float mat2Determinant(const Mat2 mat);
+void mat2Print(const Mat2 mat);
 
 #endif // LINA_MAT2_H

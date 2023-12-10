@@ -26,31 +26,20 @@ typedef union Mat4 {
 	};
 } Mat4;
 
-void fillMat4(const Vec4 column0, const Vec4 column1, const Vec4 column2, const Vec4 column3, Mat4 outputMatrix);
+// constructors
+Mat4 mat4(const Vec4 col0, const Vec4 col1, const Vec4 col2, const Vec4 col3);
+Mat4 mat4Fill(const float fillValue);
+Mat4 mat4Zero();
+Mat4 mat4Diagonalize(const float diagonalValue);
+Mat4 mat4Identity();
 
-// Arguments are in ROW-MAJOR order. Remember to transpose resulting matrix.
-void fillMat4WithFloats(const float col0row0, const float col1row0, const float col2row0, const float col3row0, 
-			const float col0row1, const float col1row1, const float col2row1, const float col3row1,
-			const float col0row2, const float col1row2, const float col2row2, const float col3row2,
-			const float col0row3, const float col1row3, const float col2row3, const float col3row3,
-			Mat4 outputMatrix);
+// operations
+Mat4 mat4MultVec(const Mat4 mat, const Vec4 vec);
+Mat4 mat4MultMat(const Mat4 left, const Mat4 right);
+Mat4 mat4Inverse(const Mat4 mat);
 
-void zeroMat4(Mat4 zeroedMatrix);
-void copyMat4(const Mat4 inputMatrix, Mat4 copyIntoMatrix);
-void fillIdentityMat4(Mat4 outputMatrix);
-void transposeMat4(Mat4 transposedMatrix);
-
-void multMat4Vec(const Mat4 transformedSpace, Vec4 transformedVector);
-
-/*
- * This function allows for a variable amount of vectors to be multiplied. To use the
- * function, simply add as many vector arguments as you want, while specifying the
- * number of vectors.
-*/
-void productOfMat4Vecs(const Mat4 transformedSpace, const size_t numOfVectors, ...);
-
-void multMat4Mat(const Mat4 transformedSpace, Mat4 transformedMatrix);
-
-void printMat4(const Mat4 matrixToPrint);
+// matrix info
+float mat4Determinant(const Mat4 mat);
+void mat4Print(const Mat4 mat);
 
 #endif // LINA_MAT4_H

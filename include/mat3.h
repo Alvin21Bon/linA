@@ -24,30 +24,20 @@ typedef union Mat3 {
 	};
 } Mat3;
 
-void fillMat3(const Vec3 column0, const Vec3 column1, const Vec3 column2, Mat3 outputMatrix);
+// constructors
+Mat3 mat3(const Vec3 col0, const Vec3 col1, const Vec3 col2);
+Mat3 mat3Fill(const float fillValue);
+Mat3 mat3Zero();
+Mat3 mat3Diagonalize(const float diagonalValue);
+Mat3 mat3Identity();
 
-// Arguments are in ROW-MAJOR order. Remember to transpose resulting matrix.
-void fillMat3WithFloats(const float col0row0, const float col1row0, const float col2row0, 
-			const float col0row1, const float col1row1, const float col2row1,
-			const float col0row2, const float col1row2, const float col2row2,
-			Mat3 outputMatrix);
+// operations
+Mat3 mat3MultVec(const Mat3 mat, const Vec3 vec);
+Mat3 mat3MultMat(const Mat3 left, const Mat3 right);
+Mat3 mat3Inverse(const Mat3 mat);
 
-void zeroMat3(Mat3 zeroedMatrix);
-void copyMat3(const Mat3 inputMatrix, Mat3 copyIntoMatrix);
-void fillIdentityMat3(Mat3 outputMatrix);
-void transposeMat3(Mat3 transposedMatrix);
-
-void multMat3Vec(const Mat3 transformedSpace, Vec3 transformedVector);
-
-/*
- * This function allows for a variable amount of vectors to be multiplied. To use the
- * function, simply add as many vector arguments as you want, while specifying the
- * number of vectors.
-*/
-void productOfMat3Vecs(const Mat3 transformedSpace, const size_t numOfVectors, ...);
-
-void multMat3Mat(const Mat3 transformedSpace, Mat3 transformedMatrix);
-
-void printMat3(const Mat3 matrixToPrint);
+// matrix info
+float mat3Determinant(const Mat3 mat);
+void mat3Print(const Mat3 mat);
 
 #endif // LINA_MAT3_H
