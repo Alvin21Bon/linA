@@ -10,6 +10,7 @@
 
 typedef union Mat4 {
 	float elements[4][4];
+	float e[4][4];
 	Vec4 columns[4];
 
 	struct {
