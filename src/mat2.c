@@ -32,9 +32,11 @@ Mat2 mat2Identity()
 // operations
 Vec2 mat2MultVec(const Mat2 mat, const Vec2 vec)
 {
-	Vec2 result;
-	Mat2 scaledMat = mat2(vec2Scaled(mat.colX, vec.x), vec2Scaled(mat.colY, vec.y));
-	result = vec2Add(scaledMat.colX, scaledMat.colY);
+	Vec2 result = vec2Zero();
+	for (int i = 0; i < MAT2_NUM_OF_COLUMNS; i++)
+	{
+		result = vec2Add(result, vec2Scaled(mat.columns[i], vec.elements[i]));
+	}
 	return result;
 }
 Mat2 mat2MultMat(const Mat2 left, const Mat2 right)
