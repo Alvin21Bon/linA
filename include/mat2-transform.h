@@ -1,5 +1,5 @@
-#ifndef LINA_TRANSFORM_MAT2_H
-#define LINA_TRANSFORM_MAT2_H
+#ifndef LINA_MAT2_TRANSFORM_H
+#define LINA_MAT2_TRANSFORM_H
 
 #include "shared.h"
 #include "mat2.h"
@@ -49,4 +49,4 @@ void reflectY(Mat2 matrixToTransform);
 void shearX(Mat2 matrixToTransform, const float shearAmt);
 void shearY(Mat2 matrixToTransform, const float shearAmt);
 
-#endif // LINA_TRANSFORM_MAT2_H
+#endif // LINA_MAT2_TRANSFORM_H
