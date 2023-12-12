@@ -46,10 +46,10 @@ Vec4 mat4MultVec(const Mat4 mat, const Vec4 vec)
 Mat4 mat4MultMat(const Mat4 left, const Mat4 right)
 {
 	Mat4 result;
-	result.colX = mat4MultVec(left, right.colX);
-	result.colY = mat4MultVec(left, right.colY);
-	result.colZ = mat4MultVec(left, right.colZ);
-	result.colW = mat4MultVec(left, right.colW);
+	result.ihat = mat4MultVec(left, right.ihat);
+	result.jhat = mat4MultVec(left, right.jhat);
+	result.khat = mat4MultVec(left, right.khat);
+	result.lhat = mat4MultVec(left, right.lhat);
 	return result;
 }
 Mat4 mat4Inverse(const Mat4 mat);

@@ -42,8 +42,8 @@ Vec2 mat2MultVec(const Mat2 mat, const Vec2 vec)
 Mat2 mat2MultMat(const Mat2 left, const Mat2 right)
 {
 	Mat2 result;
-	result.colX = mat2MultVec(left, right.colX);
-	result.colY = mat2MultVec(left, right.colY);
+	result.ihat = mat2MultVec(left, right.ihat);
+	result.jhat = mat2MultVec(left, right.jhat);
 	return result;
 }
 Mat2 mat2Inverse(const Mat2 mat);

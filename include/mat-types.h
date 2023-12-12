@@ -13,8 +13,8 @@ typedef union Mat2 {
 		Vec2 col1;
 	};
 	struct {
-		Vec2 colX;
-		Vec2 colY;
+		Vec2 ihat;
+		Vec2 jhat;
 	};
 } Mat2;
 
@@ -29,9 +29,9 @@ typedef union Mat3 {
 		Vec3 col2;
 	};
 	struct {
-		Vec3 colX;
-		Vec3 colY;
-		Vec3 colZ;
+		Vec3 ihat;
+		Vec3 jhat;
+		Vec3 khat;
 	};
 } Mat3;
 
@@ -47,10 +47,10 @@ typedef union Mat4 {
 		Vec4 col3;
 	};
 	struct {
-		Vec4 colX;
-		Vec4 colY;
-		Vec4 colZ;
-		Vec4 colW;
+		Vec4 ihat;
+		Vec4 jhat;
+		Vec4 khat;
+		Vec4 lhat;
 	};
 } Mat4;
 

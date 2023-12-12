@@ -44,9 +44,9 @@ Vec3 mat3MultVec(const Mat3 mat, const Vec3 vec)
 Mat3 mat3MultMat(const Mat3 left, const Mat3 right)
 {
 	Mat3 result;
-	result.colX = mat3MultVec(left, right.colX);
-	result.colY = mat3MultVec(left, right.colY);
-	result.colZ = mat3MultVec(left, right.colZ);
+	result.ihat = mat3MultVec(left, right.ihat);
+	result.jhat = mat3MultVec(left, right.jhat);
+	result.khat = mat3MultVec(left, right.khat);
 	return result;
 }
 Mat3 mat3Inverse(const Mat3 mat);
