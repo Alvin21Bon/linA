@@ -4,49 +4,32 @@
 #include "shared.h"
 #include "mat2.h"
 
-/******************************************************************************
-* SCALING FUNCTIONS
-******************************************************************************/
+// scaling
+Mat2 mat2ScaledX(const Mat2 mat, const float scalar);
+Mat2 mat2ScaledY(const Mat2 mat, const float scalar);
+Mat2 mat2Scaled(const Mat2 mat, const float scalar);
 
-//
-void scaleXMat2(Mat2 matrixToTransform, const float scaleAmt);
-void scaleYMat2(Mat2 matrixToTransform, const float scaleAmt);
+// rotating
+Mat2 mat2RotatedX(const Mat2 mat, const double radians);
+Mat2 mat2RotatedY(const Mat2 mat, const double radians);
+Mat2 mat2RotatedZ(const Mat2 mat, const double radians);
 
-/******************************************************************************
-* ROTATING FUNCTIONS
-*
-* NOTE: All of these functions use radians
-******************************************************************************/
+Mat2 mat2Pitch(const Mat2 mat, const double radians);
+Mat2 mat2Yaw(const Mat2 mat, const double radians);
+Mat2 mat2Roll(const Mat2 mat, const double radians);
 
-//
-void rotateXMat2(Mat2 matrixToTransform, const double angleInRadians);
-void rotateYMat2(Mat2 matrixToTransform, const double angleInRadians);
-void rotateZMat2(Mat2 matrixToTransform, const double angleInRadians);
+// reflecting
+Mat2 mat2ReflectedYZ(const Mat2 mat);
+Mat2 mat2ReflectedZY(const Mat2 mat);
 
-void pitchMat2(Mat2 matrixToTransform, const double angleInRadians);
-void yawMat2(Mat2 matrixToTransform, const double angleInRadians);
-void rollMat2(Mat2 matrixToTransform, const double angleInRadians);
+Mat2 mat2ReflectedZX(const Mat2 mat);
+Mat2 mat2ReflectedXZ(const Mat2 mat);
 
-/******************************************************************************
-* REFLECTING FUNCTIONS
-******************************************************************************/
+Mat2 mat2ReflectedX(const Mat2 mat);
+Mat2 mat2ReflectedY(const Mat2 mat);
 
-//
-void reflectPlaneYZMat2(Mat2 matrixToTransform); 
-void reflectPlaneZYMat2(Mat2 matrixToTransform);
-
-void reflectPlaneZXMat2(Mat2 matrixToTransform);
-void reflectPlaneXZMat2(Mat2 matrixToTransform);
-
-void reflectX(Mat2 matrixToTransform);
-void reflectY(Mat2 matrixToTransform);
-
-/******************************************************************************
-* SHEARING FUNCTIONS
-******************************************************************************/
-
-//
-void shearX(Mat2 matrixToTransform, const float shearAmt);
-void shearY(Mat2 matrixToTransform, const float shearAmt);
+// shearing
+Mat2 mat2ShearedX(const Mat2 mat, const float shearAmt);
+Mat2 mat2ShearedY(const Mat2 mat, const float shearAmt);
 
 #endif // LINA_MAT2_TRANSFORM_H

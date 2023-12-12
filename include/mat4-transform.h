@@ -4,64 +4,44 @@
 #include "shared.h"
 #include "mat4.h"
 
-/******************************************************************************
-* SCALING FUNCTIONS
-******************************************************************************/
+// scaling
+Mat4 mat4ScaledX(const Mat4 mat, const float scalar);
+Mat4 mat4ScaledY(const Mat4 mat, const float scalar);
+Mat4 mat4ScaledZ(const Mat4 mat, const float scalar);
+Mat4 mat4Scaled(const Mat4 mat, const float scalar);
 
-//
-void scaleXMat4(Mat4 matrixToTransform, const float scaleAmt);
-void scaleYMat4(Mat4 matrixToTransform, const float scaleAmt);
-void scaleZMat4(Mat4 matrixToTransform, const float scaleAmt);
+// rotating
+Mat4 mat4RotatedX(const Mat4 mat, const double radians);
+Mat4 mat4RotatedY(const Mat4 mat, const double radians);
+Mat4 mat4RotatedZ(const Mat4 mat, const double radians);
 
-/******************************************************************************
-* ROTATING FUNCTIONS
-*
-* NOTE: All of these functions use radians
-******************************************************************************/
+Mat4 mat4Pitch(const Mat4 mat, const double radians);
+Mat4 mat4Yaw(const Mat4 mat, const double radians);
+Mat4 mat4Roll(const Mat4 mat, const double radians);
 
-//
-void rotateXMat4(Mat4 matrixToTransform, const double angleInRadians);
-void rotateYMat4(Mat4 matrixToTransform, const double angleInRadians);
-void rotateZMat4(Mat4 matrixToTransform, const double angleInRadians);
+// reflecting
+Mat4 mat4ReflectedYZ(const Mat4 mat);
+Mat4 mat4ReflectedZY(const Mat4 mat);
 
-void pitchMat4(Mat4 matrixToTransform, const double angleInRadians);
-void yawMat4(Mat4 matrixToTransform, const double angleInRadians);
-void rollMat4(Mat4 matrixToTransform, const double angleInRadians);
+Mat4 mat4ReflectedZX(const Mat4 mat);
+Mat4 mat4ReflectedXZ(const Mat4 mat);
 
-/******************************************************************************
-* REFLECTING FUNCTIONS
-******************************************************************************/
+Mat4 mat4ReflectedXY(const Mat4 mat);
+Mat4 mat4ReflectedYX(const Mat4 mat);
 
-//
-void reflectPlaneYZMat4(Mat4 matrixToTransform); 
-void reflectPlaneZYMat4(Mat4 matrixToTransform);
+// shearing
+Mat4 mat4ShearedYZ(const Mat4 mat, const float shearAmtY, const float shearAmtZ);
+Mat4 mat4ShearedZY(const Mat4 mat, const float shearAmtZ, const float shearAmtY);
 
-void reflectPlaneZXMat4(Mat4 matrixToTransform);
-void reflectPlaneXZMat4(Mat4 matrixToTransform);
+Mat4 mat4ShearedZX(const Mat4 mat, const float shearAmtZ, const float shearAmtX);
+Mat4 mat4ShearedXZ(const Mat4 mat, const float shearAmtX, const float shearAmtZ);
 
-void reflectPlaneXYMat4(Mat4 matrixToTransform);
-void reflectPlaneYXMat4(Mat4 matrixToTransform);
+Mat4 mat4ShearedXY(const Mat4 mat, const float shearAmtX, const float shearAmtY);
+Mat4 mat4ShearedYX(const Mat4 mat, const float shearAmtY, const float shearAmtX);
 
-/******************************************************************************
-* TRANSLATING FUNCTIONS
-******************************************************************************/
-
-//
-void translate2DMat4(Mat4 matrixToTransform, const float x, const float y);
-void translate3D(Mat4 matrixToTransform, const float x, const float y, const float z);
-
-/******************************************************************************
-* SHEARING FUNCTIONS
-******************************************************************************/
-
-//
-void shearPlaneYZMat4(Mat4 matrixToTransform, const float shearAmtY, const float shearAmtZ);
-void shearPlaneZYMat4(Mat4 matrixToTransform, const float shearAmtY, const float shearAmtZ);
-
-void shearPlaneZXMat4(Mat4 matrixToTransform, const float shearAmtZ, const float shearAmtX);
-void shearPlaneXZMat4(Mat4 matrixToTransform, const float shearAmtZ, const float shearAmtX);
-
-void shearPlaneXYMat4(Mat4 matrixToTransform, const float shearAmtX, const float shearAmtY);
-void shearPlaneYXMat4(Mat4 matrixToTransform, const float shearAmtX, const float shearAmtY);
+// translating
+Mat4 mat4Translate(const Mat4 mat, const Vec3 translation);
+Mat4 mat4TranslateV(const Mat4 mat, const Vec3 translation); // helper
+Mat4 mat4TranslateF(const Mat4 mat, const float x, const float y, const float z);
 
 #endif // LINA_MAT4_TRANSFORM_H

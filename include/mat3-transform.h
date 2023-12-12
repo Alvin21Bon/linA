@@ -4,63 +4,39 @@
 #include "shared.h"
 #include "mat3.h"
 
-/******************************************************************************
-* SCALING FUNCTIONS
-******************************************************************************/
+// scaling
+Mat3 mat3ScaledX(const Mat3 mat, const float scalar);
+Mat3 mat3ScaledY(const Mat3 mat, const float scalar);
+Mat3 mat3ScaledZ(const Mat3 mat, const float scalar);
+Mat3 mat3Scaled(const Mat3 mat, const float scalar);
 
-//
-void scaleXMat3(Mat3 matrixToTransform, const float scaleAmt);
-void scaleYMat3(Mat3 matrixToTransform, const float scaleAmt);
-void scaleZMat3(Mat3 matrixToTransform, const float scaleAmt);
+// rotating
+Mat3 mat3RotatedX(const Mat3 mat, const double radians);
+Mat3 mat3RotatedY(const Mat3 mat, const double radians);
+Mat3 mat3RotatedZ(const Mat3 mat, const double radians);
 
-/******************************************************************************
-* ROTATING FUNCTIONS
-*
-* NOTE: All of these functions use radians
-******************************************************************************/
+Mat3 mat3Pitch(const Mat3 mat, const double radians);
+Mat3 mat3Yaw(const Mat3 mat, const double radians);
+Mat3 mat3Roll(const Mat3 mat, const double radians);
 
-//
-void rotateXMat3(Mat3 matrixToTransform, const double angleInRadians);
-void rotateYMat3(Mat3 matrixToTransform, const double angleInRadians);
-void rotateZMat3(Mat3 matrixToTransform, const double angleInRadians);
+// reflecting
+Mat3 mat3ReflectedYZ(const Mat3 mat);
+Mat3 mat3ReflectedZY(const Mat3 mat);
 
-void pitchMat3(Mat3 matrixToTransform, const double angleInRadians);
-void yawMat3(Mat3 matrixToTransform, const double angleInRadians);
-void rollMat3(Mat3 matrixToTransform, const double angleInRadians);
+Mat3 mat3ReflectedZX(const Mat3 mat);
+Mat3 mat3ReflectedXZ(const Mat3 mat);
 
-/******************************************************************************
-* REFLECTING FUNCTIONS
-******************************************************************************/
+Mat3 mat3ReflectedXY(const Mat3 mat);
+Mat3 mat3ReflectedYX(const Mat3 mat);
 
-//
-void reflectPlaneYZMat3(Mat3 matrixToTransform); 
-void reflectPlaneZYMat3(Mat3 matrixToTransform);
+// shearing
+Mat3 mat3ShearedYZ(const Mat3 mat, const float shearAmtY, const float shearAmtZ);
+Mat3 mat3ShearedZY(const Mat3 mat, const float shearAmtZ, const float shearAmtY);
 
-void reflectPlaneZXMat3(Mat3 matrixToTransform);
-void reflectPlaneXZMat3(Mat3 matrixToTransform);
+Mat3 mat3ShearedZX(const Mat3 mat, const float shearAmtZ, const float shearAmtX);
+Mat3 mat3ShearedXZ(const Mat3 mat, const float shearAmtX, const float shearAmtZ);
 
-void reflectPlaneXYMat3(Mat3 matrixToTransform);
-void reflectPlaneYXMat3(Mat3 matrixToTransform);
-
-/******************************************************************************
-* TRANSLATING FUNCTIONS
-******************************************************************************/
-
-//
-void translate2DMat3(Mat3 matrixToTransform, const float x, const float y);
-
-/******************************************************************************
-* SHEARING FUNCTIONS
-******************************************************************************/
-
-//
-void shearPlaneYZMat3(Mat3 matrixToTransform, const float shearAmtY, const float shearAmtZ);
-void shearPlaneZYMat3(Mat3 matrixToTransform, const float shearAmtY, const float shearAmtZ);
-
-void shearPlaneZXMat3(Mat3 matrixToTransform, const float shearAmtZ, const float shearAmtX);
-void shearPlaneXZMat3(Mat3 matrixToTransform, const float shearAmtZ, const float shearAmtX);
-
-void shearPlaneXYMat3(Mat3 matrixToTransform, const float shearAmtX, const float shearAmtY);
-void shearPlaneYXMat3(Mat3 matrixToTransform, const float shearAmtX, const float shearAmtY);
+Mat3 mat3ShearedXY(const Mat3 mat, const float shearAmtX, const float shearAmtY);
+Mat3 mat3ShearedYX(const Mat3 mat, const float shearAmtY, const float shearAmtX);
 
 #endif // LINA_MAT3_TRANSFORM_H
