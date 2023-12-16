@@ -2,30 +2,11 @@
 #define LINA_MAT4_H
 
 #include "shared.h"
-#include "vec4.h"
+#include "mat-types.h"
 
 #define MAT4_NUM_OF_COLUMNS 4
 #define MAT4_NUM_OF_ROWS 4
 #define MAT4_NUM_OF_ELEMENTS (MAT4_NUM_OF_COLUMNS * MAT4_NUM_OF_ROWS) 
-
-typedef union Mat4 {
-	float elements[4][4];
-	float e[4][4]; // should be used rarely due to its unobvious name
-	Vec4 columns[4];
-
-	struct {
-		Vec4 col0;
-		Vec4 col1;
-		Vec4 col2;
-		Vec4 col3;
-	};
-	struct {
-		Vec4 colX;
-		Vec4 colY;
-		Vec4 colZ;
-		Vec4 colW;
-	};
-} Mat4;
 
 // constructors
 Mat4 mat4(const Vec4 col0, const Vec4 col1, const Vec4 col2, const Vec4 col3);
