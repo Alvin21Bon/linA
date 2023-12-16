@@ -1,3 +1,6 @@
+#ifndef LINA_VEC_TYPES_H
+#define LINA_VEC_TYPES_H
+
 typedef union Vec2 {
 	float elements[2];
 
@@ -86,3 +89,5 @@ typedef union Vec4 {
 		};
 	};
 } Vec4;
+
+#endif // LINA_VEC_TYPES_H
