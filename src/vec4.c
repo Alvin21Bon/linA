@@ -46,20 +46,6 @@ Vec4 vec4Sub(const Vec4 left, const Vec4 right)
 	result.w = left.w - right.w;
 	return result;
 }
-float vec4Dot(const Vec4 left, const Vec4 right)
-{
-	return (left.x * right.x) + (left.y * right.y) + (left.z * right.z) + (left.w * right.w);
-}
-Vec4 vec4Cross(const Vec4 left, const Vec4 right)
-{
-	Vec4 result;
-	result.x = (left.y * right.z) - (left.z * right.y);
-	result.y = (left.z * right.x) - (left.x * right.z);
-	result.z = (left.x * right.y) - (left.y * right.x);
-	result.w = left.w == right.w ? right.w : 1; // ??? idk. W component doesnt really matter here
-	return result;
-}
-Vec4 vec4ProjectedLine(const Vec4 vec, const Vec4 line); // TODO consider how w component will affect this implementation
 Vec4 vec4Negated(const Vec4 vec)
 {
 	return vec4Scaled(vec, -1);
@@ -73,7 +59,6 @@ Vec4 vec4Scaled(const Vec4 vec, const float scalar)
 	result.w = vec.w * scalar;
 	return result;
 }
-Vec4 vec4Rotated(const Vec4 vec, const float radians, const Vec3 axis);
 Vec4 vec4Normalized(const Vec4 vec)
 {
 	float scalar = 1 / vec4Length(vec);
