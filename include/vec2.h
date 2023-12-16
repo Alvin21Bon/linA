@@ -2,20 +2,7 @@
 #define LINA_VEC2_H
 
 #include "shared.h"
-
-typedef union Vec2 {
-	float elements[2];
-
-	struct {
-		float x, y;
-	};	
-	struct {
-		float s, t;
-	};	
-	struct {
-		float width, height;
-	};
-} Vec2;
+#include "vec-types.h"
 
 // constructors
 Vec2 vec2(const float e1, const float e2);

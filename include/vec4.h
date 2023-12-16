@@ -2,56 +2,7 @@
 #define LINA_VEC4_H
 
 #include "shared.h"
-#include "vec2.h"
-#include "vec3.h"
-
-typedef union Vec4 {
-	float elements[4];
-
-	struct {
-		float x, y, z, w;
-	};
-	struct {
-		float r, g, b, a;
-	};
-	struct {
-		float s, t, p, q;
-	};
-	
-	// vec2 swizzling
-	struct {
-		union {
-			Vec2 xy;
-			Vec2 st;
-		};
-		float dummy0;
-		float dummy1;
-	};
-	struct {
-		float dummy2;
-		Vec2 yz;
-		float dummy3;
-	};
-	struct {
-		float dummy4;
-		float dummy5;
-		Vec2 zw;
-	};
-
-	// vec3 swizzling
-	struct {
-		union {
-			Vec3 xyz, rgb, stp;
-		};
-		float dummy6;
-	};
-	struct {
-		float dummy7;
-		union {
-			Vec3 yzw;
-		};
-	};
-} Vec4;
+#include "vec-types.h"
 
 // constructors
 Vec4 vec4(const float e1, const float e2, const float e3, const float e4);
