@@ -2,7 +2,7 @@
 #define LINA_MAT4_TRANSFORM_H
 
 #include "shared.h"
-#include "mat4.h"
+#include "mat-types.h"
 
 // scaling
 Mat4 mat4ScaledX(const Mat4 mat, const float scalar);
