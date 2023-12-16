@@ -41,6 +41,7 @@ float vec2Cross(const Vec2 left, const Vec2 right)
 	Mat2 mat = mat2(left, right);
 	return mat2Determinant(mat);
 }
+Vec2 vec2ProjectedLine(const Vec2 vec, const Vec2 line);
 Vec2 vec2Negated(const Vec2 vec)
 {
 	return vec2Scaled(vec, -1);

@@ -59,6 +59,7 @@ Vec4 vec4Cross(const Vec4 left, const Vec4 right)
 	result.w = left.w == right.w ? right.w : 1; // ??? idk. W component doesnt really matter here
 	return result;
 }
+Vec4 vec4ProjectedLine(const Vec4 vec, const Vec4 line);
 Vec4 vec4Negated(const Vec4 vec)
 {
 	return vec4Scaled(vec, -1);
