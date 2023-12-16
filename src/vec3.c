@@ -56,7 +56,12 @@ Vec3 vec3Cross(const Vec3 left, const Vec3 right)
 	result.z = (left.x * right.y) - (left.y * right.x);
 	return result;
 }
-Vec3 vec3ProjectedLine(const Vec3 vec, const Vec3 line);
+Vec3 vec3ProjectedLine(const Vec3 vec, const Vec3 line)
+{
+	Vec3 normLine = vec3Normalized(line);
+	float projectionScalar = vec3Dot(normLine, vec);
+	return vec3Scaled(normLine, projectionScalar);
+}
 Vec3 vec3Negated(const Vec3 vec)
 {
 	return vec3Scaled(vec, -1);
