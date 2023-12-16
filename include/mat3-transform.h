@@ -11,6 +11,7 @@ Mat3 mat3ScaledZ(const Mat3 mat, const float scalar);
 Mat3 mat3Scaled(const Mat3 mat, const float scalar);
 
 // rotating
+Mat3 mat3Rotated(const Mat3 mat, const double radians, const Vec3 axis);
 Mat3 mat3RotatedX(const Mat3 mat, const double radians);
 Mat3 mat3RotatedY(const Mat3 mat, const double radians);
 Mat3 mat3RotatedZ(const Mat3 mat, const double radians);

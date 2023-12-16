@@ -6,6 +6,7 @@ Mat2 mat2ScaledY(const Mat2 mat, const float scalar);
 Mat2 mat2Scaled(const Mat2 mat, const float scalar);
 
 // rotating
+Mat2 mat2Rotated(const Mat2 mat, const double radians, const Vec3 axis);
 Mat2 mat2RotatedX(const Mat2 mat, const double radians);
 Mat2 mat2RotatedY(const Mat2 mat, const double radians);
 Mat2 mat2RotatedZ(const Mat2 mat, const double radians);
