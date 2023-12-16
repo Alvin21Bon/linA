@@ -74,7 +74,31 @@ Vec3 vec3Scaled(const Vec3 vec, const float scalar)
 	result.z = vec.z * scalar;
 	return result;
 }
-Vec3 vec3Rotated(const Vec3 vec, const float radians, const Vec3 axis);
+Vec3 vec3Rotated(const Vec3 vec, const float radians, const Vec3 axis)
+{
+	// if these functions are confusing, look at your rotation notes
+	Vec3 vecProjectedOnAxis = vec3ProjectedLine(vec, axis); 
+	
+	// we are defining a plane that rests on the tip of the vector and axis of rotation projection point
+	// this plane is used to define a new coordinate system that will allow for simple circle calculations
+	Vec3 circleIhat = vec3Sub(vec, vecProjectedOnAxis);
+	Vec3 circleJhat = vec3Cross(axis, circleIhat); // taking cross product with argument due to edge case where the vector projected on the axis is zero vector
+	float circleRadius = vec3Length(circleIhat); // getting the radius before normalizing the circle basis vectors
+	circleIhat = vec3Normalized(circleIhat);
+	circleJhat = vec3Normalized(circleJhat);
+	Mat3 circleCoordinateSystem = mat3(circleIhat, circleJhat, vec3Zero());
+
+	// we are now working in our new coordinate system to get the circle coordinates
+	float circleX = cos(radians) * circleRadius;
+	float circleY = sin(radians) * circleRadius;
+	Vec3 circleCoords = vec3(circleX, circleY, 0);
+
+	// this is essentially just change of basis work
+	Vec3 circleCoordsInOurCoordinateSystem = mat3MultVec(circleCoordinateSystem, circleCoords);
+
+	Vec3 result = vec3Add(vecProjectedOnAxis, circleCoordsInOurCoordinateSystem);
+	return result; 
+}
 Vec3 vec3Normalized(const Vec3 vec)
 {
 	float scalar = 1 / vec3Length(vec);

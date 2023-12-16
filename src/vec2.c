@@ -61,29 +61,8 @@ Vec2 vec2Scaled(const Vec2 vec, const float scalar)
 Vec2 vec2Rotated(const Vec2 vec, const float radians, const Vec3 axis)
 {
 	// this function will rotate vec through 3d space, then project it back onto the 2d plane
-	// if these functions are confusing, look at your rotation notes
-	Vec3 vec3D = vec3V(vec, 0);
-	Vec3 vecProjectedOnAxis = vec3ProjectedLine(vec3D, axis); 
-	
-	// we are defining a plane that rests on the tip of the vector and axis of rotation projection point
-	// this plane is used to define a new coordinate system that will allow for simple circle calculations
-	Vec3 circleIhat = vec3Sub(vec3D, vecProjectedOnAxis);
-	Vec3 circleJhat = vec3Cross(axis, circleIhat); // taking cross product with argument due to edge case where the vector projected on the axis is zero vector
-	float circleRadius = vec3Length(circleIhat); // getting the radius before normalizing the circle basis vectors
-	circleIhat = vec3Normalized(circleIhat);
-	circleJhat = vec3Normalized(circleJhat);
-	Mat3 circleCoordinateSystem = mat3(circleIhat, circleJhat, vec3Zero());
-
-	// we are now working in our new coordinate system to get the circle coordinates
-	float circleX = cos(radians) * circleRadius;
-	float circleY = sin(radians) * circleRadius;
-	Vec3 circleCoords = vec3(circleX, circleY, 0);
-
-	// this is essentially just change of basis work
-	Vec3 circleCoordsInOurCoordinateSystem = mat3MultVec(circleCoordinateSystem, circleCoords);
-
-	Vec3 result = vec3Add(vecProjectedOnAxis, circleCoordsInOurCoordinateSystem);
-	return result.xy; // projected back onto 2d plane
+	// this is the only acceptable case to couple these functions together
+	return vec3Rotated(vec3V(vec, 0), radians, axis).xy;
 }
 Vec2 vec2Normalized(const Vec2 vec)
 {
