@@ -72,7 +72,7 @@ Vec4 vec4Scaled(const Vec4 vec, const float scalar)
 	result.w = vec.w * scalar;
 	return result;
 }
-Vec4 vec4Rotated(const Vec4 vec, const float radians);
+Vec4 vec4Rotated(const Vec4 vec, const float radians, const Vec3 axis);
 Vec4 vec4Normalized(const Vec4 vec)
 {
 	float scalar = 1 / vec4Length(vec);

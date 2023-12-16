@@ -18,7 +18,7 @@ float vec4Dot(const Vec4 left, const Vec4 right);
 Vec4 vec4Cross(const Vec4 left, const Vec4 right);
 Vec4 vec4Negated(const Vec4 vec);
 Vec4 vec4Scaled(const Vec4 vec, const float scalar);
-Vec4 vec4Rotated(const Vec4 vec, const float radians);
+Vec4 vec4Rotated(const Vec4 vec, const float radians, const Vec3 axis);
 Vec4 vec4Normalized(const Vec4 vec);
 
 // vector info

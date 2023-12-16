@@ -18,7 +18,7 @@ float vec3Dot(const Vec3 left, const Vec3 right);
 Vec3 vec3Cross(const Vec3 left, const Vec3 right);
 Vec3 vec3Negated(const Vec3 vec);
 Vec3 vec3Scaled(const Vec3 vec, const float scalar);
-Vec3 vec3Rotated(const Vec3 vec, const float radians);
+Vec3 vec3Rotated(const Vec3 vec, const float radians, const Vec3 axis);
 Vec3 vec3Normalized(const Vec3 vec);
 
 // vector info

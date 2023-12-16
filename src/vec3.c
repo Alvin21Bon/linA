@@ -68,7 +68,7 @@ Vec3 vec3Scaled(const Vec3 vec, const float scalar)
 	result.z = vec.z * scalar;
 	return result;
 }
-Vec3 vec3Rotated(const Vec3 vec, const float radians);
+Vec3 vec3Rotated(const Vec3 vec, const float radians, const Vec3 axis);
 Vec3 vec3Normalized(const Vec3 vec)
 {
 	float scalar = 1 / vec3Length(vec);

@@ -52,7 +52,7 @@ Vec2 vec2Scaled(const Vec2 vec, const float scalar)
 	result.y = vec.y * scalar;
 	return result;
 }
-Vec2 vec2Rotated(const Vec2 vec, const float radians);
+Vec2 vec2Rotated(const Vec2 vec, const float radians, const Vec3 axis);
 Vec2 vec2Normalized(const Vec2 vec)
 {
 	float scalar = 1 / vec2Length(vec);
