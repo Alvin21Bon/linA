@@ -5,14 +5,12 @@ Mat2 mat2ScaledX(const Mat2 mat, const float scalar)
 {
 	Mat2 transformation = mat2Identity();
 	transformation.ihat.x = scalar;
-
 	return mat2MultMat(transformation, mat);
 }
 Mat2 mat2ScaledY(const Mat2 mat, const float scalar)
 {
 	Mat2 transformation = mat2Identity();
 	transformation.jhat.y = scalar;
-
 	return mat2MultMat(transformation, mat);
 }
 Mat2 mat2Scaled(const Mat2 mat, const float scalar)
