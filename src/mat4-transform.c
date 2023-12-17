@@ -19,6 +19,12 @@ Mat4 mat4ScaledZ(const Mat4 mat, const float scalar)
 	transformation.khat.z = scalar;
 	return mat4MultMat(transformation, mat);
 }
+Mat4 mat4ScaledW(const Mat4 mat, const float scalar)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.lhat.w = scalar;
+	return mat4MultMat(transformation, mat);
+}
 Mat4 mat4Scaled(const Mat4 mat, const float scalar)
 {
 	Mat4 transformation = mat4Diagonalize(scalar);

@@ -8,6 +8,7 @@
 Mat4 mat4ScaledX(const Mat4 mat, const float scalar);
 Mat4 mat4ScaledY(const Mat4 mat, const float scalar);
 Mat4 mat4ScaledZ(const Mat4 mat, const float scalar);
+Mat4 mat4ScaledW(const Mat4 mat, const float scalar);
 Mat4 mat4Scaled(const Mat4 mat, const float scalar);
 
 // rotating
