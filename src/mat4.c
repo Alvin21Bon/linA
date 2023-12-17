@@ -53,6 +53,14 @@ Mat4 mat4MultMat(const Mat4 left, const Mat4 right)
 	return result;
 }
 Mat4 mat4Inverse(const Mat4 mat);
+Mat4 mat4Transposed(const Mat4 mat)
+{
+	Vec4 xComponents = vec4(mat.col0.x, mat.col1.x, mat.col2.x, mat.col3.x);
+	Vec4 yComponents = vec4(mat.col0.y, mat.col1.y, mat.col2.y, mat.col3.y);
+	Vec4 zComponents = vec4(mat.col0.z, mat.col1.z, mat.col2.z, mat.col3.z);
+	Vec4 wComponents = vec4(mat.col0.w, mat.col1.w, mat.col2.w, mat.col3.w);
+	return mat4(xComponents, yComponents, zComponents, wComponents);
+}
 
 // matrix info
 float mat4Determinant(const Mat4 mat)

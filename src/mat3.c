@@ -50,6 +50,13 @@ Mat3 mat3MultMat(const Mat3 left, const Mat3 right)
 	return result;
 }
 Mat3 mat3Inverse(const Mat3 mat);
+Mat3 mat3Transposed(const Mat3 mat)
+{
+	Vec3 xComponents = vec3(mat.col0.x, mat.col1.x, mat.col2.x);
+	Vec3 yComponents = vec3(mat.col0.y, mat.col1.y, mat.col2.y);
+	Vec3 zComponents = vec3(mat.col0.z, mat.col1.z, mat.col2.z);
+	return mat3(xComponents, yComponents, zComponents);
+}
 
 // matrix info
 float mat3Determinant(const Mat3 mat)

@@ -19,6 +19,7 @@ Mat4 mat4Identity();
 Vec4 mat4MultVec(const Mat4 mat, const Vec4 vec);
 Mat4 mat4MultMat(const Mat4 left, const Mat4 right);
 Mat4 mat4Inverse(const Mat4 mat);
+Mat4 mat4Transposed(const Mat4 mat);
 
 // matrix info
 float mat4Determinant(const Mat4 mat);

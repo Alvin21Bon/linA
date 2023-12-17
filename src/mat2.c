@@ -47,6 +47,12 @@ Mat2 mat2MultMat(const Mat2 left, const Mat2 right)
 	return result;
 }
 Mat2 mat2Inverse(const Mat2 mat);
+Mat2 mat2Transposed(const Mat2 mat)
+{
+	Vec2 xComponents = vec2(mat.col0.x, mat.col1.x);
+	Vec2 yComponents = vec2(mat.col0.y, mat.col1.y);
+	return mat2(xComponents, yComponents);
+}
 
 // matrix info
 float mat2Determinant(const Mat2 mat)
