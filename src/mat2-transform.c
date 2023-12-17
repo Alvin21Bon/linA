@@ -33,33 +33,23 @@ Mat2 mat2Rotated(const Mat2 mat, const double radians, const Vec3 axis)
 
 	return mat2MultMat(transformation, mat);
 }
-Mat2 mat2RotatedX(const Mat2 mat, const double radians)
+Mat2 mat2Pitch(const Mat2 mat, const double radians) 
 {
 	Mat2 transformation = mat2Rotated(mat2Identity(), radians, vec3(1,0,0));
 	return mat2MultMat(transformation, mat);
 }
-Mat2 mat2RotatedY(const Mat2 mat, const double radians)
+Mat2 mat2Yaw(const Mat2 mat, const double radians) 
 {
 	Mat2 transformation = mat2Rotated(mat2Identity(), radians, vec3(0,1,0));
 	return mat2MultMat(transformation, mat);
 }
-Mat2 mat2RotatedZ(const Mat2 mat, const double radians)
+Mat2 mat2Roll(const Mat2 mat, const double radians) 
 {
 	Mat2 transformation = mat2Rotated(mat2Identity(), radians, vec3(0,0,1));
 	return mat2MultMat(transformation, mat);
 }
 
-Mat2 mat2Pitch(const Mat2 mat, const double radians) { return mat2RotatedX(mat, radians); }
-Mat2 mat2Yaw(const Mat2 mat, const double radians) { return mat2RotatedY(mat, radians); }
-Mat2 mat2Roll(const Mat2 mat, const double radians) { return mat2RotatedZ(mat, radians); }
-
 // reflecting
-Mat2 mat2ReflectedYZ(const Mat2 mat);
-Mat2 mat2ReflectedZY(const Mat2 mat);
-
-Mat2 mat2ReflectedZX(const Mat2 mat);
-Mat2 mat2ReflectedXZ(const Mat2 mat);
-
 Mat2 mat2ReflectedX(const Mat2 mat);
 Mat2 mat2ReflectedY(const Mat2 mat);
 

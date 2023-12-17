@@ -8,10 +8,6 @@ Mat4 mat4Scaled(const Mat4 mat, const float scalar);
 
 // rotating
 Mat4 mat4Rotated(const Mat4 mat, const double radians, const Vec3 axis);
-Mat4 mat4RotatedX(const Mat4 mat, const double radians);
-Mat4 mat4RotatedY(const Mat4 mat, const double radians);
-Mat4 mat4RotatedZ(const Mat4 mat, const double radians);
-
 Mat4 mat4Pitch(const Mat4 mat, const double radians);
 Mat4 mat4Yaw(const Mat4 mat, const double radians);
 Mat4 mat4Roll(const Mat4 mat, const double radians);
