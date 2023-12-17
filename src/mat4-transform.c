@@ -28,6 +28,7 @@ Mat4 mat4ScaledW(const Mat4 mat, const float scalar)
 Mat4 mat4Scaled(const Mat4 mat, const float scalar)
 {
 	Mat4 transformation = mat4Diagonalize(scalar);
+	transformation.lhat.w = 1; // do not scale w components
 	return mat4MultMat(transformation, mat);
 }
 
