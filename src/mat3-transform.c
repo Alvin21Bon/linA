@@ -77,12 +77,30 @@ Mat3 mat3ReflectedXY(const Mat3 mat)
 Mat3 mat3ReflectedYX(const Mat3 mat) { return mat3ReflectedXY(mat); }
 
 // shearing
-Mat3 mat3ShearedYZ(const Mat3 mat, const float shearAmtY, const float shearAmtZ);
-Mat3 mat3ShearedZY(const Mat3 mat, const float shearAmtZ, const float shearAmtY);
+Mat3 mat3ShearedYZ(const Mat3 mat, const float shearAmtY, const float shearAmtZ)
+{
+	Mat3 transformation = mat3Identity();
+	transformation.ihat.yz = vec2(shearAmtY, shearAmtZ);
+	return mat3MultMat(transformation, mat);
+}
+Mat3 mat3ShearedZY(const Mat3 mat, const float shearAmtZ, const float shearAmtY)
+	{ return mat3ShearedYZ(mat, shearAmtY, shearAmtZ); }
 
-Mat3 mat3ShearedZX(const Mat3 mat, const float shearAmtZ, const float shearAmtX);
-Mat3 mat3ShearedXZ(const Mat3 mat, const float shearAmtX, const float shearAmtZ);
+Mat3 mat3ShearedZX(const Mat3 mat, const float shearAmtZ, const float shearAmtX)
+{
+	Mat3 transformation = mat3Identity();
+	transformation.jhat = vec3(shearAmtX, 1, shearAmtZ);
+	return mat3MultMat(transformation, mat);
+}
+Mat3 mat3ShearedXZ(const Mat3 mat, const float shearAmtX, const float shearAmtZ)
+	{ return mat3ShearedZX(mat, shearAmtZ, shearAmtX); }
 
-Mat3 mat3ShearedXY(const Mat3 mat, const float shearAmtX, const float shearAmtY);
-Mat3 mat3ShearedYX(const Mat3 mat, const float shearAmtY, const float shearAmtX);
+Mat3 mat3ShearedXY(const Mat3 mat, const float shearAmtX, const float shearAmtY)
+{
+	Mat3 transformation = mat3Identity();
+	transformation.khat.xy = vec2(shearAmtX, shearAmtY);
+	return mat3MultMat(transformation, mat);
+}
+Mat3 mat3ShearedYX(const Mat3 mat, const float shearAmtY, const float shearAmtX)
+	{ return mat3ShearedXY(mat, shearAmtX, shearAmtY); }
 
