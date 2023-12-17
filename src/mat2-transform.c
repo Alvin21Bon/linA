@@ -15,10 +15,7 @@ Mat2 mat2ScaledY(const Mat2 mat, const float scalar)
 }
 Mat2 mat2Scaled(const Mat2 mat, const float scalar)
 {
-	Mat2 transformation = mat2Identity();
-	transformation = mat2ScaledX(transformation, scalar);
-	transformation = mat2ScaledY(transformation, scalar);
-
+	Mat2 transformation = mat2Diagonalize(scalar);
 	return mat2MultMat(transformation, mat);
 }
 
