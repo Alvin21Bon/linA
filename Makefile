@@ -34,7 +34,7 @@ DEBUG_LIBRARY := $(DEBUG_DIR)/$(LIBRARY_NAME)
 # === END DECLARING VARIABLES FOR USE IN MAKEFILE
 
 # === BEGIN PHONY TARGETS
-.phony: release debug clean
+.phony: release debug install clean
 
 release: $(RELEASE_LIBRARY)
 
