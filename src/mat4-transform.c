@@ -111,7 +111,15 @@ Mat4 mat4ShearedYX(const Mat4 mat, const float shearAmtY, const float shearAmtX)
 	{ return mat4ShearedXY(mat, shearAmtX, shearAmtY); }
 
 // translating
-Mat4 mat4Translate(const Mat4 mat, const Vec3 translation);
-Mat4 mat4TranslateV(const Mat4 mat, const Vec3 translation); // helper
-Mat4 mat4TranslateF(const Mat4 mat, const float x, const float y, const float z);
+Mat4 mat4Translate(const Mat4 mat, const Vec3 translation)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.lhat.xyz = translation;
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4TranslateV(const Mat4 mat, const Vec3 translation) { return mat4Translate(mat, translation); }
+Mat4 mat4TranslateF(const Mat4 mat, const float x, const float y, const float z)
+{
+	return mat4Translate(mat, vec3(x, y, z));
+}
 
