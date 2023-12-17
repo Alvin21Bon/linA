@@ -32,10 +32,30 @@ Mat4 mat4Scaled(const Mat4 mat, const float scalar)
 }
 
 // rotating
-Mat4 mat4Rotated(const Mat4 mat, const double radians, const Vec3 axis);
-Mat4 mat4Pitch(const Mat4 mat, const double radians);
-Mat4 mat4Yaw(const Mat4 mat, const double radians);
-Mat4 mat4Roll(const Mat4 mat, const double radians);
+Mat4 mat4Rotated(const Mat4 mat, const double radians, const Vec3 axis)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.ihat.xyz = vec3Rotated(transformation.ihat.xyz, radians, axis);
+	transformation.jhat.xyz = vec3Rotated(transformation.jhat.xyz, radians, axis);
+	transformation.khat.xyz = vec3Rotated(transformation.khat.xyz, radians, axis);
+
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4Pitch(const Mat4 mat, const double radians)
+{
+	Mat4 transformation = mat4Rotated(mat4Identity(), radians, vec3(1,0,0));
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4Yaw(const Mat4 mat, const double radians)
+{
+	Mat4 transformation = mat4Rotated(mat4Identity(), radians, vec3(0,1,0));
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4Roll(const Mat4 mat, const double radians)
+{
+	Mat4 transformation = mat4Rotated(mat4Identity(), radians, vec3(0,0,1));
+	return mat4MultMat(transformation, mat);
+}
 
 // reflecting
 Mat4 mat4ReflectedYZ(const Mat4 mat);
