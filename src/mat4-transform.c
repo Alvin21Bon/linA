@@ -58,14 +58,29 @@ Mat4 mat4Roll(const Mat4 mat, const double radians)
 }
 
 // reflecting
-Mat4 mat4ReflectedYZ(const Mat4 mat);
-Mat4 mat4ReflectedZY(const Mat4 mat);
+Mat4 mat4ReflectedYZ(const Mat4 mat)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.ihat = vec4Negated(transformation.ihat);
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4ReflectedZY(const Mat4 mat) { return mat4ReflectedYZ(mat); }
 
-Mat4 mat4ReflectedZX(const Mat4 mat);
-Mat4 mat4ReflectedXZ(const Mat4 mat);
+Mat4 mat4ReflectedZX(const Mat4 mat)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.jhat = vec4Negated(transformation.jhat);
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4ReflectedXZ(const Mat4 mat) { return mat4ReflectedZX(mat); }
 
-Mat4 mat4ReflectedXY(const Mat4 mat);
-Mat4 mat4ReflectedYX(const Mat4 mat);
+Mat4 mat4ReflectedXY(const Mat4 mat)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.khat = vec4Negated(transformation.khat);
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4ReflectedYX(const Mat4 mat) { return mat4ReflectedXY(mat); }
 
 // shearing
 Mat4 mat4ShearedYZ(const Mat4 mat, const float shearAmtY, const float shearAmtZ);
