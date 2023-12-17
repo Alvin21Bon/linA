@@ -1,10 +1,29 @@
 #include "../include/lina.h"
 
 // scaling
-Mat4 mat4ScaledX(const Mat4 mat, const float scalar);
-Mat4 mat4ScaledY(const Mat4 mat, const float scalar);
-Mat4 mat4ScaledZ(const Mat4 mat, const float scalar);
-Mat4 mat4Scaled(const Mat4 mat, const float scalar);
+Mat4 mat4ScaledX(const Mat4 mat, const float scalar)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.ihat.x = scalar;
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4ScaledY(const Mat4 mat, const float scalar)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.jhat.y = scalar;
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4ScaledZ(const Mat4 mat, const float scalar)
+{
+	Mat4 transformation = mat4Identity();
+	transformation.khat.z = scalar;
+	return mat4MultMat(transformation, mat);
+}
+Mat4 mat4Scaled(const Mat4 mat, const float scalar)
+{
+	Mat4 transformation = mat4Diagonalize(scalar);
+	return mat4MultMat(transformation, mat);
+}
 
 // rotating
 Mat4 mat4Rotated(const Mat4 mat, const double radians, const Vec3 axis);
