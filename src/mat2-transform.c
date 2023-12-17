@@ -50,9 +50,29 @@ Mat2 mat2Roll(const Mat2 mat, const double radians)
 }
 
 // reflecting
-Mat2 mat2ReflectedX(const Mat2 mat);
-Mat2 mat2ReflectedY(const Mat2 mat);
+Mat2 mat2ReflectedX(const Mat2 mat)
+{
+	Mat2 transformation = mat2Identity();
+	transformation.jhat = vec2Negated(transformation.jhat);
+	return mat2MultMat(transformation, mat);
+}
+Mat2 mat2ReflectedY(const Mat2 mat)
+{
+	Mat2 transformation = mat2Identity();
+	transformation.ihat = vec2Negated(transformation.ihat);
+	return mat2MultMat(transformation, mat);
+}
 
 // shearing
-Mat2 mat2ShearedX(const Mat2 mat, const float shearAmt);
-Mat2 mat2ShearedY(const Mat2 mat, const float shearAmt);
+Mat2 mat2ShearedX(const Mat2 mat, const float shearAmt)
+{
+	Mat2 transformation = mat2Identity();
+	transformation.jhat.x = shearAmt;
+	return mat2MultMat(transformation, mat);
+}
+Mat2 mat2ShearedY(const Mat2 mat, const float shearAmt)
+{
+	Mat2 transformation = mat2Identity();
+	transformation.ihat.y = shearAmt;
+	return mat2MultMat(transformation, mat);
+}
