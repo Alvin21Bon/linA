@@ -101,7 +101,10 @@ Vec3 vec3Rotated(const Vec3 vec, const float radians, const Vec3 axis)
 }
 Vec3 vec3Normalized(const Vec3 vec)
 {
-	float scalar = 1 / vec3Length(vec);
+	float vecLength = vec3Length(vec);
+	if (vecLength == 0) return vec3Zero();
+
+	float scalar = 1 / vecLength;
 	return vec3Scaled(vec, scalar);
 }
 

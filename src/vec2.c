@@ -66,7 +66,10 @@ Vec2 vec2Rotated(const Vec2 vec, const float radians, const Vec3 axis)
 }
 Vec2 vec2Normalized(const Vec2 vec)
 {
-	float scalar = 1 / vec2Length(vec);
+	float vecLength = vec2Length(vec);
+	if (vecLength == 0) return vec2Zero();
+
+	float scalar = 1 / vecLength;
 	return vec2Scaled(vec, scalar);
 }
 

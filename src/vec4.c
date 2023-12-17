@@ -61,7 +61,10 @@ Vec4 vec4Scaled(const Vec4 vec, const float scalar)
 }
 Vec4 vec4Normalized(const Vec4 vec)
 {
-	float scalar = 1 / vec4Length(vec);
+	float vecLength = vec4Length(vec);
+	if (vecLength == 0) return vec4Zero();
+
+	float scalar = 1 / vecLength;
 	return vec4Scaled(vec, scalar);
 }
 Vec4 vec4PerspDivide(const Vec4 vec)
