@@ -21,5 +21,6 @@ Vec4 vec4PerspDivide(const Vec4 vec);
 
 // vector info
 float vec4Length(const Vec4 vec);
+void vec4Print(const Vec4 vec);
 
 #endif // LINA_VEC4_H

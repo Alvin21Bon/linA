@@ -75,3 +75,7 @@ float vec4Length(const Vec4 vec)
 {
 	return sqrt(pow(vec.x, 2) + pow(vec.y, 2) + pow(vec.z, 2) + pow(vec.w, 2));
 }
+void vec4Print(const Vec4 vec)
+{
+	printf("| %f %f %f %f |\n", vec.x, vec.y, vec.z, vec.w);
+}

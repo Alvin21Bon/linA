@@ -22,5 +22,6 @@ Vec2 vec2Normalized(const Vec2 vec);
 
 // vector info
 float vec2Length(const Vec2 vec);
+void vec2Print(const Vec2 vec);
 
 #endif // LINA_VEC2_H

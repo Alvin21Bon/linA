@@ -75,3 +75,7 @@ float vec2Length(const Vec2 vec)
 {
 	return sqrt(pow(vec.x, 2) + pow(vec.y, 2));
 }
+void vec2Print(const Vec2 vec)
+{
+	printf("| %f %f |\n", vec.x, vec.y);
+}

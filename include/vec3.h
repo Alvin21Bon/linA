@@ -24,5 +24,6 @@ Vec3 vec3Normalized(const Vec3 vec);
 
 // vector info
 float vec3Length(const Vec3 vec);
+void vec3Print(const Vec3 vec);
 
 #endif // LINA_VEC3_H

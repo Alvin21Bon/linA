@@ -110,3 +110,7 @@ float vec3Length(const Vec3 vec)
 {
 	return sqrt(pow(vec.x, 2) + pow(vec.y, 2) + pow(vec.z, 2));
 }
+void vec3Print(const Vec3 vec)
+{
+	printf("| %f %f %f |\n", vec.x, vec.y, vec.z);
+}
