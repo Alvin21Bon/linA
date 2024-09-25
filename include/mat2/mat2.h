@@ -1,8 +1,7 @@
 #ifndef LINA_MAT2_H
 #define LINA_MAT2_H
 
-#include "shared.h"
-#include "mat-types.h"
+#include "../mat-types.h"
 
 #define MAT2_NUM_OF_COLUMNS 2
 #define MAT2_NUM_OF_ROWS 2

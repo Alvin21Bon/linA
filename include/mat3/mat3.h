@@ -1,8 +1,7 @@
 #ifndef LINA_MAT3_H
 #define LINA_MAT3_H
 
-#include "shared.h"
-#include "mat-types.h"
+#include "../mat-types.h"
 
 #define MAT3_NUM_OF_COLUMNS 3
 #define MAT3_NUM_OF_ROWS 3

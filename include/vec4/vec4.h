@@ -1,8 +1,7 @@
 #ifndef LINA_VEC4_H
 #define LINA_VEC4_H
 
-#include "shared.h"
-#include "vec-types.h"
+#include "../vec-types.h"
 
 // constructors
 Vec4 vec4(const float e1, const float e2, const float e3, const float e4);

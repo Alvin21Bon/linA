@@ -1,4 +1,4 @@
-#include "../include/lina.h"
+#include "../../../include/lina.h"
 
 // scaling
 Mat4 mat4ScaledX(const Mat4 mat, const float scalar)

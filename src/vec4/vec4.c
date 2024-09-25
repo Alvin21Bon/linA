@@ -1,4 +1,4 @@
-#include "../include/lina.h"
+#include "../../include/lina.h"
 
 // constructors
 Vec4 vec4(const float e1, const float e2, const float e3, const float e4)

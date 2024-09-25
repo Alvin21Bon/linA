@@ -1,8 +1,7 @@
 #ifndef LINA_MAT4_H
 #define LINA_MAT4_H
 
-#include "shared.h"
-#include "mat-types.h"
+#include "../mat-types.h"
 
 #define MAT4_NUM_OF_COLUMNS 4
 #define MAT4_NUM_OF_ROWS 4

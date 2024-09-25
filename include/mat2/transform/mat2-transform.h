@@ -1,8 +1,7 @@
 #ifndef LINA_MAT2_TRANSFORM_H
 #define LINA_MAT2_TRANSFORM_H
 
-#include "shared.h"
-#include "mat-types.h"
+#include "../../mat-types.h"
 
 // scaling
 Mat2 mat2ScaledX(const Mat2 mat, const float scalar);

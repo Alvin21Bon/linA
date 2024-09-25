@@ -1,4 +1,4 @@
-#include "../include/lina.h"
+#include "../../include/lina.h"
 
 // constructors
 Mat3 mat3(const Vec3 col0, const Vec3 col1, const Vec3 col2)

@@ -1,8 +1,7 @@
 #ifndef LINA_MAT3_TRANSFORM_H
 #define LINA_MAT3_TRANSFORM_H
 
-#include "shared.h"
-#include "mat-types.h"
+#include "../../mat-types.h"
 
 // scaling
 Mat3 mat3ScaledX(const Mat3 mat, const float scalar);
