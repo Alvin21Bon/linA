@@ -42,19 +42,12 @@ INCLUDES_INSTALL_DIR := $(SYSTEM_INCLUDES_DIR)/$(LIBRARY_BASE_NAME)
 # === END DECLARING VARIABLES FOR USE IN MAKEFILE
 
 # === BEGIN PHONY TARGETS
-.phony: release debug install clean
+.phony: release debug clean
 
 release: $(RELEASE_LIBRARY)
 
 debug: CFLAGS := $(CFLAGS) $(DEBUG_FLAGS)
 debug: $(DEBUG_LIBRARY)
-
-install: 
-	sudo rm -f $(LIBRARY_INSTALL_DIR)
-	sudo rm -rf $(INCLUDES_INSTALL_DIR)
-
-	sudo cp $(RELEASE_LIBRARY) $(LIBRARY_INSTALL_DIR)
-	sudo cp -r $(INCLUDE_DIR) $(INCLUDES_INSTALL_DIR)
 
 clean:
 	@rm -rf build
