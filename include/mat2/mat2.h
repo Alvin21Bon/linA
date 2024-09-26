@@ -3,10 +3,6 @@
 
 #include "../mat-types.h"
 
-#define MAT2_NUM_OF_COLUMNS 2
-#define MAT2_NUM_OF_ROWS 2
-#define MAT2_NUM_OF_ELEMENTS (MAT2_NUM_OF_COLUMNS * MAT2_NUM_OF_ROWS) 
-
 // constructors
 Mat2 mat2(const Vec2 col0, const Vec2 col1);
 Mat2 mat2Fill(const float fillValue);

@@ -3,6 +3,18 @@
 
 #include <math.h>
 
+#define MAT2_NUM_OF_COLUMNS 2
+#define MAT2_NUM_OF_ROWS 2
+#define MAT2_NUM_OF_ELEMENTS (MAT2_NUM_OF_COLUMNS * MAT2_NUM_OF_ROWS) 
+
+#define MAT3_NUM_OF_COLUMNS 3
+#define MAT3_NUM_OF_ROWS 3
+#define MAT3_NUM_OF_ELEMENTS (MAT3_NUM_OF_COLUMNS * MAT3_NUM_OF_ROWS) 
+
+#define MAT4_NUM_OF_COLUMNS 4
+#define MAT4_NUM_OF_ROWS 4
+#define MAT4_NUM_OF_ELEMENTS (MAT4_NUM_OF_COLUMNS * MAT4_NUM_OF_ROWS) 
+
 static inline double TO_RADIANS(double degrees)
 {
 	return (degrees * (M_PI / (double)180));

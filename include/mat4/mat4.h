@@ -3,10 +3,6 @@
 
 #include "../mat-types.h"
 
-#define MAT4_NUM_OF_COLUMNS 4
-#define MAT4_NUM_OF_ROWS 4
-#define MAT4_NUM_OF_ELEMENTS (MAT4_NUM_OF_COLUMNS * MAT4_NUM_OF_ROWS) 
-
 // constructors
 Mat4 mat4(const Vec4 col0, const Vec4 col1, const Vec4 col2, const Vec4 col3);
 Mat4 mat4Fill(const float fillValue);

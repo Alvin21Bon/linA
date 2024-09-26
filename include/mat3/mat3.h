@@ -3,10 +3,6 @@
 
 #include "../mat-types.h"
 
-#define MAT3_NUM_OF_COLUMNS 3
-#define MAT3_NUM_OF_ROWS 3
-#define MAT3_NUM_OF_ELEMENTS (MAT3_NUM_OF_COLUMNS * MAT3_NUM_OF_ROWS) 
-
 // constructors
 Mat3 mat3(const Vec3 col0, const Vec3 col1, const Vec3 col2);
 Mat3 mat3Fill(const float fillValue);
