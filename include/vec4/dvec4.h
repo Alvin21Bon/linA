@@ -17,6 +17,7 @@ dVec4 dvec4Negated(const dVec4 vec);
 dVec4 dvec4Scaled(const dVec4 vec, const double scalar);
 dVec4 dvec4Normalized(const dVec4 vec);
 dVec4 dvec4PerspDivide(const dVec4 vec);
+int dvec4Equals(const dVec4 left, const dVec4 right);
 
 // vector info
 double dvec4Length(const dVec4 vec);

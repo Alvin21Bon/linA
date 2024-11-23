@@ -55,6 +55,11 @@ uVec4 uvec4Scaled(const uVec4 vec, const unsigned int scalar)
 	result.w = vec.w * scalar;
 	return result;
 }
+int uvec4Equals(const uVec4 left, const uVec4 right)
+{
+	uVec4 compareVec = uvec4Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0 && compareVec.z == 0 && compareVec.w == 0;
+}
 
 // vector info
 float uvec4Length(const uVec4 vec)

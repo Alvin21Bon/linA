@@ -40,6 +40,11 @@ uVec2 uvec2Scaled(const uVec2 vec, const unsigned int scalar)
 	result.y = vec.y * scalar;
 	return result;
 }
+int uvec2Equals(const uVec2 left, const uVec2 right)
+{
+	uVec2 compareVec = uvec2Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0;
+}
 
 // vector info
 float uvec2Length(const uVec2 vec)

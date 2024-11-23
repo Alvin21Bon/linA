@@ -72,6 +72,11 @@ dVec2 dvec2Normalized(const dVec2 vec)
 	double scalar = 1 / vecLength;
 	return dvec2Scaled(vec, scalar);
 }
+int dvec2Equals(const dVec2 left, const dVec2 right)
+{
+	dVec2 compareVec = dvec2Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0;
+}
 
 // vector info
 double dvec2Length(const dVec2 vec)

@@ -18,6 +18,7 @@ Vec2 vec2Negated(const Vec2 vec);
 Vec2 vec2Scaled(const Vec2 vec, const float scalar);
 Vec2 vec2Rotated(const Vec2 vec, const float radians, const Vec3 axis);
 Vec2 vec2Normalized(const Vec2 vec);
+int vec2Equals(const Vec2 left, const Vec2 right);
 
 // vector info
 float vec2Length(const Vec2 vec);

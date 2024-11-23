@@ -17,6 +17,7 @@ Vec4 vec4Negated(const Vec4 vec);
 Vec4 vec4Scaled(const Vec4 vec, const float scalar);
 Vec4 vec4Normalized(const Vec4 vec);
 Vec4 vec4PerspDivide(const Vec4 vec);
+int vec4Equals(const Vec4 left, const Vec4 right);
 
 // vector info
 float vec4Length(const Vec4 vec);

@@ -72,6 +72,11 @@ dVec4 dvec4PerspDivide(const dVec4 vec)
 	double scalar = 1 / vec.w;
 	return dvec4Scaled(vec, scalar);
 }
+int dvec4Equals(const dVec4 left, const dVec4 right)
+{
+	dVec4 compareVec = dvec4Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0 && compareVec.z == 0 && compareVec.w == 0;
+}
 
 // vector info
 double dvec4Length(const dVec4 vec)

@@ -72,6 +72,11 @@ Vec4 vec4PerspDivide(const Vec4 vec)
 	float scalar = 1 / vec.w;
 	return vec4Scaled(vec, scalar);
 }
+int vec4Equals(const Vec4 left, const Vec4 right)
+{
+	Vec4 compareVec = vec4Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0 && compareVec.z == 0 && compareVec.w == 0;
+}
 
 // vector info
 float vec4Length(const Vec4 vec)

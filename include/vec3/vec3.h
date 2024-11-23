@@ -20,6 +20,7 @@ Vec3 vec3Negated(const Vec3 vec);
 Vec3 vec3Scaled(const Vec3 vec, const float scalar);
 Vec3 vec3Rotated(const Vec3 vec, const float radians, const Vec3 axis);
 Vec3 vec3Normalized(const Vec3 vec);
+int vec3Equals(const Vec3 left, const Vec3 right);
 
 // vector info
 float vec3Length(const Vec3 vec);

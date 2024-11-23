@@ -15,6 +15,7 @@ iVec4 ivec4Add(const iVec4 left, const iVec4 right);
 iVec4 ivec4Sub(const iVec4 left, const iVec4 right);
 iVec4 ivec4Negated(const iVec4 vec);
 iVec4 ivec4Scaled(const iVec4 vec, const int scalar);
+int ivec4Equals(const iVec4 left, const iVec4 right);
 
 // vector info
 float ivec4Length(const iVec4 vec);

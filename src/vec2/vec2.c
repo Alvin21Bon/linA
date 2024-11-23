@@ -72,6 +72,11 @@ Vec2 vec2Normalized(const Vec2 vec)
 	float scalar = 1 / vecLength;
 	return vec2Scaled(vec, scalar);
 }
+int vec2Equals(const Vec2 left, const Vec2 right)
+{
+	Vec2 compareVec = vec2Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0;
+}
 
 // vector info
 float vec2Length(const Vec2 vec)

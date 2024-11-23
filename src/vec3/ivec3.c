@@ -55,6 +55,11 @@ iVec3 ivec3Scaled(const iVec3 vec, const int scalar)
 	result.z = vec.z * scalar;
 	return result;
 }
+int ivec3Equals(const iVec3 left, const iVec3 right)
+{
+	iVec3 compareVec = ivec3Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0 && compareVec.z == 0;
+}
 
 // vector info
 float ivec3Length(const iVec3 vec)

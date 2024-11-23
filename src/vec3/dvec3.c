@@ -107,6 +107,11 @@ dVec3 dvec3Normalized(const dVec3 vec)
 	double scalar = 1 / vecLength;
 	return dvec3Scaled(vec, scalar);
 }
+int dvec3Equals(const dVec3 left, const dVec3 right)
+{
+	dVec3 compareVec = dvec3Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0 && compareVec.z == 0;
+}
 
 // vector info
 double dvec3Length(const dVec3 vec)

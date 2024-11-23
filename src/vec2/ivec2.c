@@ -43,6 +43,11 @@ iVec2 ivec2Negated(const iVec2 vec)
 {
 	return ivec2Scaled(vec, -1);
 }
+int ivec2Equals(const iVec2 left, const iVec2 right)
+{
+	iVec2 compareVec = ivec2Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0;
+}
 
 // vector info
 float ivec2Length(const iVec2 vec)

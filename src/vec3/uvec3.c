@@ -51,6 +51,11 @@ uVec3 uvec3Scaled(const uVec3 vec, const unsigned int scalar)
 	result.z = vec.z * scalar;
 	return result;
 }
+int uvec3Equals(const uVec3 left, const uVec3 right)
+{
+	uVec3 compareVec = uvec3Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0 && compareVec.z == 0;
+}
 
 // vector info
 float uvec3Length(const uVec3 vec)

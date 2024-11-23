@@ -15,6 +15,7 @@ iVec3 ivec3Add(const iVec3 left, const iVec3 right);
 iVec3 ivec3Sub(const iVec3 left, const iVec3 right);
 iVec3 ivec3Negated(const iVec3 vec);
 iVec3 ivec3Scaled(const iVec3 vec, const int scalar);
+int ivec3Equals(const iVec3 left, const iVec3 right);
 
 // vector info
 float ivec3Length(const iVec3 vec);

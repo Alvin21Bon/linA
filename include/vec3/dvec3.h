@@ -20,6 +20,7 @@ dVec3 dvec3Negated(const dVec3 vec);
 dVec3 dvec3Scaled(const dVec3 vec, const double scalar);
 dVec3 dvec3Rotated(const dVec3 vec, const double radians, const dVec3 axis);
 dVec3 dvec3Normalized(const dVec3 vec);
+int dvec3Equals(const dVec3 left, const dVec3 right);
 
 // vector info
 double dvec3Length(const dVec3 vec);

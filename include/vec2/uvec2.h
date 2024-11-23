@@ -12,6 +12,7 @@ uVec2 uvec2Zero();
 uVec2 uvec2Add(const uVec2 left, const uVec2 right);
 uVec2 uvec2Sub(const uVec2 left, const uVec2 right);
 uVec2 uvec2Scaled(const uVec2 vec, const unsigned int scalar);
+int uvec2Equals(const uVec2 left, const uVec2 right);
 
 // vector info
 float uvec2Length(const uVec2 vec);

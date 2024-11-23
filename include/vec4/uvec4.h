@@ -14,6 +14,7 @@ uVec4 uvec4Zero();
 uVec4 uvec4Add(const uVec4 left, const uVec4 right);
 uVec4 uvec4Sub(const uVec4 left, const uVec4 right);
 uVec4 uvec4Scaled(const uVec4 vec, const unsigned int scalar);
+int uvec4Equals(const uVec4 left, const uVec4 right);
 
 // vector info
 float uvec4Length(const uVec4 vec);

@@ -107,6 +107,11 @@ Vec3 vec3Normalized(const Vec3 vec)
 	float scalar = 1 / vecLength;
 	return vec3Scaled(vec, scalar);
 }
+int vec3Equals(const Vec3 left, const Vec3 right)
+{
+	Vec3 compareVec = vec3Sub(left, right);
+	return compareVec.x == 0 && compareVec.y == 0 && compareVec.z == 0;
+}
 
 // vector info
 float vec3Length(const Vec3 vec)
