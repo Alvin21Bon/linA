@@ -1,2 +1,4 @@
 Diagnostics:
   UnusedIncludes: None
+CompileFlags:
+  Compilter: gcc
